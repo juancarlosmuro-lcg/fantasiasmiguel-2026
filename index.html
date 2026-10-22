@@ -151,7 +151,7 @@ h2.sect b{font-weight:700;color:var(--green-700)}
 .slede{margin-top:16px;max-width:none;color:var(--n600);font-size:16.5px}
 h3.sub{margin-top:40px;font-size:19px;font-weight:700;letter-spacing:-.015em;color:var(--n800)}
 h3.sub:first-child{margin-top:0}
-.body{max-width:66ch}
+.body{max-width:82ch;margin-top:12px;color:var(--n600)}
 .foot{max-width:var(--maxw);margin:0 auto;padding:30px 22px 70px;display:flex;justify-content:space-between;
   gap:16px;flex-wrap:wrap;border-top:1px solid var(--n200)}
 .lnk{background:none;border:none;font:inherit;font-size:14px;font-weight:700;color:var(--green-700);
@@ -227,15 +227,6 @@ td.var{font-weight:700;color:var(--n800);width:21%}
 td.np{color:var(--n400);font-style:italic}
 .hl{background:var(--green-100)}
 
-/* Barras píldora */
-.pills{display:flex;align-items:flex-end;gap:10px;margin-top:26px;padding:22px 18px 14px;
-  background:var(--neutral-0);border:1px solid var(--n200);border-radius:var(--r-lg);overflow-x:auto}
-.pill{flex:1 0 42px;display:flex;flex-direction:column;align-items:center;gap:9px}
-.pill .pbar{width:100%;max-width:46px;border-radius:var(--r-pill);
-  background:linear-gradient(180deg,var(--green-400) 0%,var(--green-600) 65%,var(--green-800) 100%)}
-.pill.accent .pbar{background:linear-gradient(180deg,var(--lime) 0%,var(--green-400) 80%)}
-.pill .lb{font-size:11px;color:var(--n500);text-align:center;line-height:1.2}
-.pill .vv{font-family:var(--font-numeric);font-variant-numeric:tabular-nums;font-size:14px;font-weight:700;color:var(--n800)}
 
 /* Fichas numeradas */
 .fich{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:26px}
@@ -419,8 +410,122 @@ td.np{color:var(--n400);font-style:italic}
 .ctachip{margin-top:26px;display:flex;align-items:flex-start}
 .ctachip > *{flex:0 0 auto}
 
+
+/* Ficha de la fábrica */
+.fac{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:0;margin-top:22px;border-radius:var(--r-xl);overflow:hidden;
+  border:1px solid var(--n200);background:var(--neutral-0);box-shadow:var(--shadow-sm)}
+.fac-main{padding:26px 26px 22px;background:linear-gradient(135deg,var(--green-100) 0%,var(--neutral-0) 70%)}
+.fac-eb{font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;font-weight:800;color:var(--green-600)}
+.fac-name{margin-top:8px;font-size:22px;font-weight:700;letter-spacing:-.02em;color:var(--n900)}
+.fac-addr{margin-top:5px;font-size:13px;color:var(--n500)}
+.fac-lb{margin-top:18px;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;font-weight:800;color:var(--n600)}
+.chips{display:flex;flex-wrap:wrap;gap:7px;margin-top:9px}
+.chip{display:inline-flex;align-items:center;border-radius:var(--r-pill);padding:6px 12px;font-size:13px;font-weight:600;
+  background:var(--neutral-0);border:1px solid var(--green-300);color:var(--green-800)}
+.chip.exp{background:var(--green-800);border-color:var(--green-800);color:#fff}
+.chip.exp::before{content:"↗";margin-right:6px;color:var(--lime);font-weight:800}
+.fac-note{margin:16px 0 0;font-size:14px;color:var(--n700);line-height:1.5}
+.fac-side{padding:22px 24px;background:var(--green-900);color:#fff;display:flex;flex-direction:column;gap:14px}
+.fac-kv span{display:block;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;font-weight:800;color:var(--green-300)}
+.fac-kv b{display:block;margin-top:4px;font-size:14.5px;font-weight:600;line-height:1.4}
+.fac-kv.np b{color:rgba(186,244,233,.7);font-style:italic;font-weight:500}
+/* Por qué importa (timeline) */
+.tl .why{margin-top:12px;background:var(--neutral-0);border:1px solid var(--green-300);border-left:4px solid var(--green-500);
+  border-radius:0 var(--r-md) var(--r-md) 0;padding:14px 16px;font-size:14.5px;color:var(--n700);line-height:1.55;box-shadow:var(--shadow-sm)}
+.tl .why b{color:var(--green-800)}
+/* Balance de frontera */
+.ledger{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,2.2fr);gap:16px;margin-top:22px}
+.lg-col{border-radius:var(--r-xl);padding:22px 22px 20px}
+.lg-col.cost{background:var(--err-bg);border:1px solid #EBC7BE;display:flex;flex-direction:column}
+.lg-col.give{background:var(--green-900);color:#fff}
+.lg-h{font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;font-weight:800}
+.cost .lg-h{color:var(--err)} .give .lg-h{color:var(--lime)}
+.lg-v{margin-top:12px;font-weight:300;font-size:58px;line-height:1;letter-spacing:-.03em;color:var(--err)}
+.lg-v sup{font-size:.38em;font-weight:700;vertical-align:super}
+.lg-t{margin-top:12px;font-size:14px;color:var(--n700);line-height:1.5;flex:1}
+.bens{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:14px}
+.ben{background:rgba(255,255,255,.06);border:1px solid rgba(186,244,233,.2);border-radius:var(--r-lg);padding:16px;display:flex;flex-direction:column}
+.ben-v{font-weight:300;font-size:40px;line-height:1;letter-spacing:-.03em;color:#fff}
+.ben-v sup{font-size:.4em;font-weight:700;vertical-align:super;color:var(--green-300)}
+.ben-t{margin-top:10px;font-size:13.5px;color:var(--green-100);line-height:1.5;flex:1}
+.ben-t b{color:#fff}
+.tag{display:inline-block;align-self:flex-start;margin-top:12px;border-radius:var(--r-pill);padding:4px 10px;font-size:10px;
+  letter-spacing:.08em;text-transform:uppercase;font-weight:800}
+.t-fact{background:var(--green-200);color:var(--green-900)}
+.t-hip{background:var(--lime);color:var(--n900)}
+/* Seis bifurcaciones */
+.bifs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:24px}
+.bifs .bif{margin-top:0;display:flex;flex-direction:column}
+.bifs .bif .sc2{flex:1}
+.bk{display:inline-block;align-self:flex-start;margin-bottom:10px;border-radius:var(--r-pill);padding:4px 11px;font-size:10px;letter-spacing:.14em;
+  text-transform:uppercase;font-weight:800;background:var(--green-800);color:#fff}
+.bifs .bif .q{font-size:15.5px;line-height:1.35}
+.bifs .bif .e{font-size:13.5px}
+/* Etiquetas de agente */
+.ag .anchor.t2{color:var(--green-200);border-color:rgba(186,244,233,.4)}
+.ag .anchor.pl{color:#fff;background:rgba(3,181,133,.35);border-color:rgba(3,181,133,.7)}
+/* Mapa */
+.mapcard{margin-top:24px;background:var(--neutral-0);border:1px solid var(--n200);border-radius:var(--r-xl);padding:22px;box-shadow:var(--shadow-sm)}
+.mc-t{font-size:19px;font-weight:700;letter-spacing:-.015em;color:var(--n900)}
+.mc-s{margin-top:4px;font-size:13.5px;color:var(--n500)}
+.mc-body{display:grid;grid-template-columns:minmax(0,1.85fr) minmax(0,1fr);gap:20px;margin-top:16px}
+.mc-map{position:relative;display:flex;background:#EDF8F4;border:1px solid var(--green-200);border-radius:var(--r-lg);overflow:hidden;touch-action:none;min-height:440px}
+.mc-map svg{display:block;flex:1;width:100%;height:auto;min-height:440px;cursor:grab;user-select:none}
+.mc-map svg.grab{cursor:grabbing}
+.m-st{fill:var(--neutral-0);stroke:#8FA59E;stroke-width:.8}
+.m-st.on{fill:var(--green-200);stroke:#5E8F80}
+.m-lb{font-family:var(--font-sans);font-weight:700;fill:var(--n800);paint-order:stroke;stroke:#EDF8F4;stroke-linejoin:round;pointer-events:none}
+.m-facl{fill:var(--green-900)}
+.m-nm{font-family:var(--font-sans);font-weight:600;fill:var(--n700);paint-order:stroke;stroke:#EDF8F4;stroke-linejoin:round;pointer-events:none}
+.m-nm.dim{opacity:.15}
+.m-dot{stroke:#fff;stroke-width:1.3;vector-effect:non-scaling-stroke;cursor:pointer;transition:opacity .2s}
+.m-dot.c{fill:var(--green-800)} .m-dot.p{fill:var(--green-500)} .m-dot.fr{fill:#B9D24A;stroke:var(--green-900);stroke-width:1.6}
+.m-dot:hover,.m-dot:focus-visible{stroke:var(--n900);stroke-width:2;outline:none}
+.m-dot.sel{stroke:var(--n900);stroke-width:2.6}
+.m-dot:focus,.m-fac:focus{outline:none}
+.m-fac:focus-visible{stroke:var(--n900);stroke-width:2.6}
+.m-dot.dim{opacity:.14;pointer-events:none}
+.m-fac{fill:var(--n900);stroke:var(--lime);stroke-width:2;vector-effect:non-scaling-stroke;cursor:pointer}
+.mc-tip{position:absolute;z-index:3;pointer-events:none;background:var(--green-900);color:#fff;border-radius:10px;padding:8px 11px;font-size:12.5px;
+  box-shadow:var(--shadow-lg);max-width:240px}
+.mc-tip b{display:block;font-size:13.5px}
+.mc-tip span{color:var(--green-200)}
+.mc-ctrl{position:absolute;left:12px;bottom:12px;display:flex;gap:6px}
+.mc-ctrl button{width:34px;height:34px;border-radius:9px;border:1px solid var(--n200);background:var(--neutral-0);font:inherit;font-size:17px;
+  font-weight:700;color:var(--n700);cursor:pointer;box-shadow:var(--shadow-sm)}
+.mc-ctrl button:hover{border-color:var(--green-500);color:var(--green-700)}
+.mc-hint{position:absolute;right:12px;bottom:14px;font-size:11px;color:var(--n500);background:rgba(255,254,252,.85);border-radius:var(--r-pill);padding:4px 10px}
+.mc-filters{display:flex;flex-wrap:wrap;gap:7px}
+.mf{border:1px solid var(--n200);background:var(--neutral-0);border-radius:var(--r-pill);padding:7px 12px;font:inherit;font-size:13px;font-weight:600;
+  color:var(--n700);cursor:pointer}
+.mf:hover{border-color:var(--green-500)}
+.mf.on{background:var(--green-200);border-color:var(--green-500);color:var(--green-900);box-shadow:0 0 0 2px var(--green-200)}
+.mc-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:14px}
+.ms{background:var(--n50);border-radius:var(--r-md);padding:12px 12px 10px}
+.ms .v{font-weight:300;font-size:30px;line-height:1;color:var(--green-800);letter-spacing:-.02em}
+.ms .l{margin-top:6px;font-size:11.5px;font-weight:600;color:var(--n600);line-height:1.25}
+.mc-detail{margin-top:14px;border:1px solid var(--n200);border-radius:var(--r-lg);padding:16px;min-height:178px}
+.md-empty{font-size:13.5px;color:var(--n500);line-height:1.5}
+.md-h{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;padding-bottom:10px;border-bottom:1px solid var(--n100)}
+.md-n{font-size:17px;font-weight:700;color:var(--n900);letter-spacing:-.01em}
+.md-z{margin-top:3px;font-size:12.5px;color:var(--n500)}
+.md-tag{flex:0 0 auto;border-radius:var(--r-pill);padding:4px 10px;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;font-weight:800}
+.md-tag.c{background:var(--green-800);color:#fff} .md-tag.p{background:var(--green-200);color:var(--green-900)}
+.md-tag.fr{background:var(--lime);color:var(--n900)} .md-tag.fac{background:var(--n900);color:var(--lime)}
+.md-row{margin-top:10px;font-size:13.5px;color:var(--n700);line-height:1.45}
+.md-row span{display:block;font-size:10px;letter-spacing:.13em;text-transform:uppercase;font-weight:800;color:var(--green-600);margin-bottom:2px}
+.md-src{margin-top:12px;font-size:11.5px;color:var(--n400)}
+.mc-legend{display:flex;flex-wrap:wrap;gap:8px 14px;margin-top:14px;font-size:12px;color:var(--n600)}
+.mc-legend span{display:inline-flex;align-items:center;gap:6px}
+.lg-dot{width:11px;height:11px;border-radius:50%;display:inline-block;border:1.5px solid #fff;box-shadow:0 0 0 1px var(--n200)}
+.lg-dot.c{background:var(--green-800)} .lg-dot.p{background:var(--green-500)} .lg-dot.f{background:#B9D24A;box-shadow:0 0 0 1px var(--green-900)}
+.lg-sq{width:11px;height:11px;border-radius:3px;background:var(--n900);box-shadow:0 0 0 1.5px var(--lime);display:inline-block}
+
 /* ========================= RESPONSIVE ========================= */
 @media(max-width:1000px){
+  .fac,.ledger,.mc-body{grid-template-columns:1fr}
+  .bens{grid-template-columns:1fr}
+  .bifs{grid-template-columns:1fr}
   .ctagrid{grid-template-columns:1fr;gap:28px}
   .ctagrid > div:last-child{border-left:none;border-top:1px solid rgba(255,255,255,.25);padding-left:0;padding-top:24px}
   .tabgrid,.tabgrid.g2{grid-template-columns:repeat(2,minmax(0,1fr))}
@@ -441,7 +546,10 @@ td.np{color:var(--n400);font-style:italic}
 }
 @media(max-width:620px){
   body{font-size:16px}
+  .mc-map,.mc-map svg{min-height:260px}
   .tabgrid,.tabgrid.g2,.fich,.scn,.tiles,.leg{grid-template-columns:1fr}
+  .mc-hint{display:none}
+  .mapcard{padding:14px}
   .hubright{align-items:flex-start}
   .privtag{margin-left:0}
   .case .acts,.case .bridge{min-height:0}
@@ -591,7 +699,7 @@ td.np{color:var(--n400);font-style:italic}
     <div class="plogo"><img src="data:image/webp;base64,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" alt="Fantasías Miguel"></div>
     <div class="recip">
       <b>Preparado para David Litchi</b>
-      Presidente · Fantasías Miguel<br>
+      CEO · Fantasías Miguel<br>
       21 de octubre de 2026
       <span class="privtag">Documento privado</span>
     </div>
@@ -632,9 +740,9 @@ td.np{color:var(--n400);font-style:italic}
   </div>
 
   <div class="kpis">
-    <div class="kpi"><div class="v num">46</div><div class="l">tiendas</div><div class="s">David Litchi, co-CEO, a Whitepaper.mx · 22 abr 2026</div></div>
-    <div class="kpi"><div class="v num">4<small>M</small></div><div class="l">visitantes al año</div><div class="s">David Litchi, co-CEO, a Whitepaper.mx · 22 abr 2026</div></div>
-    <div class="kpi"><div class="v num"><small>≈$</small>600</div><div class="l">ticket promedio</div><div class="s">David Litchi, co-CEO, a Whitepaper.mx · 22 abr 2026</div></div>
+    <div class="kpi"><div class="v num">46</div><div class="l">tiendas</div><div class="s">David Litchi, CEO, a Whitepaper.mx · 22 abr 2026</div></div>
+    <div class="kpi"><div class="v num">4<small>M</small></div><div class="l">visitantes al año</div><div class="s">David Litchi, CEO, a Whitepaper.mx · 22 abr 2026</div></div>
+    <div class="kpi"><div class="v num"><small>≈$</small>600</div><div class="l">ticket promedio</div><div class="s">David Litchi, CEO, a Whitepaper.mx · 22 abr 2026</div></div>
     <div class="kpi"><div class="v num">46<small>h</small></div><div class="l">jornada máxima desde el 1 ene 2027</div><div class="s">Reforma a la LFT · DOF 1 may 2026, edición vespertina</div></div>
   </div>
 
@@ -676,7 +784,7 @@ td.np{color:var(--n400);font-style:italic}
     <p>Tres relojes con fecha cierta corren en paralelo: el arancel por origen vigente desde el 1 de enero de 2026, el piso salarial de dos zonas que se separó 40 % el mismo día, y la jornada que baja a 46 horas con registro electrónico obligatorio el 1 de enero de 2027. Los tres se resuelven con el mismo dato —contribución real por referencia y por tienda— y ninguno se resuelve abriendo tiendas.</p>
     <div class="quote">
       <p>«Nuestras principales clientas son mujeres desde los seis hasta los 80 años.»</p>
-      <cite>David Litchi, co-CEO de Fantasías Miguel, a Whitepaper.mx, 22 de abril de 2026</cite>
+      <cite>David Litchi, CEO de Fantasías Miguel, a Whitepaper.mx, 22 de abril de 2026</cite>
     </div>
   </div>
 
@@ -720,17 +828,17 @@ td.np{color:var(--n400);font-style:italic}
     </svg>
   </div>
 
-  <h3 class="sub">Lo que esta tesis afirma, y cómo se refuta</h3>
+  <h3 class="sub">Lo que esta tesis afirma, y cómo se dimensiona</h3>
   <div class="tabgrid g2">
     <div class="tabcard tc-hip" data-tab="Hipótesis">
       <h4>Tres estructuras de costo conviven en el mismo pasillo</h4>
       <p>Producto importado de origen sin tratado, producto importado con preferencia arancelaria y producto fabricado en Tultitlán comparten anaquel, vendedora y precio de lista. Desde enero de 2026 sus costos se movieron en direcciones distintas.</p>
       <span class="src">Deriva de hechos verificados en las secciones 02 y 03. No está confirmada con información interna.</span>
     </div>
-    <div class="tabcard tc-imp" data-tab="Refutación">
-      <h4>Qué la tumbaría</h4>
-      <p>Si el maestro de artículos ya trae fracción arancelaria y costo de aterrizaje recalculado desde enero; si existe contribución por referencia y por tienda; y si el rol de piso ya está proyectado a 46, 44, 42 y 40 horas — entonces la tesis es falsa y la conversación debe ser otra.</p>
-      <span class="src">Esa verificación toma una sesión con sistemas y compras. Es la primera parada del estudio de factibilidad.</span>
+    <div class="tabcard tc-fact" data-tab="Prediagnóstico">
+      <h4>Tres datos la convierten en pesos</h4>
+      <p>El costo de aterrizaje por referencia con el arancel de 2026 aplicado, la contribución por tienda y por formato, y la cobertura de piso proyectada a 46, 44, 42 y 40 horas. Con esos tres cruces la tesis deja de ser una lectura externa y se vuelve un monto: cuánto margen está en juego, en qué referencias y en qué tiendas.</p>
+      <span class="src">Se obtienen en una sesión con sistemas, compras y operación. Es la primera parada del estudio de factibilidad.</span>
     </div>
   </div>
 </div>
@@ -746,12 +854,12 @@ td.np{color:var(--n400);font-style:italic}
     <div class="tabcard tc-fact" data-tab="Hecho">
       <h4>Ya se reinventaron una vez contra el mismo adversario</h4>
       <p>Cuando el mercado se abrió en los noventa, los clientes mayoristas se volvieron competidores y el producto de fantasía dejó de ser defendible contra China. La compañía cambió de categoría —a manualidades— y de modelo —a menudeo propio—. Pocas empresas mexicanas tienen ese precedente en su propia historia.</p>
-      <span class="src">David Litchi, co-CEO, a Whitepaper.mx, 22 abr 2026. <a href="https://www.whitepaper.mx/p/whitepaper-hoy-5ec" target="_blank" rel="noopener">Fuente</a></span>
+      <span class="src">David Litchi, CEO, a Whitepaper.mx, 22 abr 2026. <a href="https://www.whitepaper.mx/p/whitepaper-hoy-5ec" target="_blank" rel="noopener">Fuente</a></span>
     </div>
     <div class="tabcard tc-fact" data-tab="Hecho">
-      <h4>Manufactura propia en el Estado de México</h4>
-      <p>Fábrica en Tultitlán donde se producen artículos de MDF, diamantinas y lentejuelas, con producto que llega a Estados Unidos, Italia e Indonesia. Es integración vertical real en una categoría donde casi todos los competidores solo importan.</p>
-      <span class="src">Sitio oficial de empleo de Fantasías Miguel y Whitepaper.mx, 22 abr 2026.</span>
+      <h4>Fabrican parte de lo que venden, y lo exportan</h4>
+      <p>La compañía opera su propia fábrica en Tultitlán, Estado de México, bajo la razón social Arte Manual Decorativo. Ahí produce consumibles de manualidad —diamantina, pegamento, pintura, lentejuela, velas, entorchado— y piezas de PVC, unicel y madera, y exporta parte de esa producción. En una categoría donde casi todos los competidores solo importan, es integración vertical real.</p>
+      <span class="src">fantasiasmiguel.com, página «Únete a la familia», consultada el 22 oct 2026. Detalle en la ficha de abajo.</span>
     </div>
     <div class="tabcard tc-fact" data-tab="Hecho">
       <h4>Omnicanalidad por tienda, no solo un e-commerce</h4>
@@ -759,8 +867,8 @@ td.np{color:var(--n400);font-style:italic}
       <span class="src">fantasiasmiguel.com, consultado el 21 oct 2026.</span>
     </div>
     <div class="tabcard tc-fact" data-tab="Hecho">
-      <h4>Canal conversacional ya desplegado</h4>
-      <p>Prácticamente cada sucursal publica una o dos líneas propias de WhatsApp en el localizador. No es un número central: es atención y venta por conversación, distribuida y ya funcionando, en decenas de puntos.</p>
+      <h4>Canal conversacional en cada sucursal</h4>
+      <p>Prácticamente cada sucursal publica una o dos líneas propias de WhatsApp en el localizador. No es un número central: es un canal de atención por conversación distribuido en decenas de puntos, que ya existe y que la clienta ya conoce.</p>
       <span class="src">Localizador oficial, consultado el 21 oct 2026.</span>
     </div>
     <div class="tabcard tc-fact" data-tab="Hecho">
@@ -774,6 +882,32 @@ td.np{color:var(--n400);font-style:italic}
       <span class="src">Vacantes oficiales de Fantasías Miguel publicadas en 2026.</span>
     </div>
   </div>
+
+
+  <h3 class="sub">La fábrica de Tultitlán, en una ficha</h3>
+  <div class="fac">
+    <div class="fac-main">
+      <div class="fac-eb">Manufactura propia · Tultitlán, Estado de México</div>
+      <div class="fac-name">Fábrica de Arte Manual Decorativo</div>
+      <div class="fac-addr">Arte Manual Decorativo, S.A. de C.V. · Av. 16 de Septiembre, Barrio Santiaguito, Tultitlán, Estado de México</div>
+      <div class="fac-lb">Qué fabrica</div>
+      <div class="chips">
+        <span class="chip">Diamantina</span><span class="chip">Pegamento</span><span class="chip">Pintura</span><span class="chip">Lentejuela</span><span class="chip">Velas</span><span class="chip">Entorchado</span><span class="chip">Diseños en PVC</span><span class="chip">Diseños en unicel</span><span class="chip">Diseños en madera</span>
+      </div>
+      <div class="fac-lb">A dónde exporta</div>
+      <div class="chips">
+        <span class="chip exp">Estados Unidos</span><span class="chip exp">Italia</span><span class="chip exp">Indonesia</span><span class="chip exp">Taiwán</span>
+      </div>
+      <p class="fac-note">Que una parte de su producción se venda en cuatro mercados extranjeros dice algo concreto sobre su costo y su calidad, en un año en que el producto importado se encareció.</p>
+    </div>
+    <div class="fac-side">
+      <div class="fac-kv"><span>Razón social</span><b>Arte Manual Decorativo, S.A. de C.V.</b></div>
+      <div class="fac-kv"><span>Perfil operativo visible</span><b>Producción, empaque, almacén de producto terminado con montacargas <i>reach</i>, control de calidad y técnico químico</b></div>
+      <div class="fac-kv"><span>Plantilla del grupo</span><b>Más de 2,500 colaboradores entre sucursales y fábrica</b></div>
+      <div class="fac-kv np"><span>Superficie y plantilla de la planta</span><b>Información pública no identificada</b></div>
+    </div>
+  </div>
+  <p class="cap">Fuentes: página oficial «Únete a la familia» (productos, destinos de exportación y plantilla del grupo); página de LinkedIn de Arte Manual Decorativo, S.A. de C.V. (razón social, domicilio y planta en Tultitlán); vacantes y evaluaciones públicas de empleo en Tultitlán (perfiles de puesto). El año de constitución, 1982, proviene de un directorio empresarial y no de una fuente oficial. Los directorios derivados del DENUE reportan para esta razón social rangos de personal incompatibles entre sí —de 0 a 5 y de 51 a 100 personas— y la clasifican en joyería de fantasía, una clase que no refleja lo que hoy produce; por eso no citamos ninguno.</p>
 
   <div class="note"><b>Por qué importa este inventario.</b> Si el cuello de botella estuviera en el abasto, en el canal digital o en la relación con la clienta, ya estaría resuelto. No lo está porque no es ahí. Lo que ninguna de estas seis capacidades resuelve por sí sola es qué margen deja cada una de las miles de referencias que pasan por el anaquel, ahora que su costo dejó de moverse en bloque.</div>
 </div>
@@ -796,7 +930,8 @@ td.np{color:var(--n400);font-style:italic}
   <div class="tl">
     <div class="it"><div class="d num">15 de agosto de 2025</div><div class="x">La tasa global a importaciones por paquetería desde países sin tratado pasa de 19 % a <b>33.5 %</b>. Es la vía por la que entra el producto de Temu, Shein y AliExpress al domicilio de la clienta.</div></div>
     <div class="it key"><div class="d num">29 de diciembre de 2025 · vigor 1 de enero de 2026</div><div class="x">Se publica en el DOF el decreto que reforma <b>1,463 fracciones arancelarias</b> de la Tarifa de la LIGIE, con cuotas de 5 % a 50 % para mercancía de países sin TLC. <b>Sin reglas de transición.</b> Los capítulos alcanzados incluyen plásticos, textiles, papel y cartón, vidrio, muebles, juguetes y artículos de papelería.</div></div>
-    <div class="it"><div class="d num">1 de enero de 2026</div><div class="x">El salario mínimo general sube 13 %, de $278.80 a <b>$315.04</b> diarios. En la Zona Libre de la Frontera Norte sube 5 %, a <b>$440.87</b>. Las dos zonas se separan $125.83 por jornada.</div></div>
+    <div class="it"><div class="d num">1 de enero de 2026</div><div class="x">El salario mínimo general sube 13 %, de $278.80 a <b>$315.04</b> diarios. En la Zona Libre de la Frontera Norte sube 5 %, a <b>$440.87</b>. Las dos zonas se separan $125.83 por jornada.
+      <div class="why"><b>Por qué le importa a Fantasías Miguel.</b> Es la única de estas fechas que pega en cada tienda, todos los días, sin importar qué se vende. Con más de 2,500 colaboradores y tiendas abiertas los siete días, el piso salarial es un costo que se paga en cada sucursal, cada jornada. Y cuatro sucursales —Tijuana Centro, Tijuana Carrousel, Mexicali y Ciudad Juárez, esta última abierta en abril de 2026— están del lado caro de la brecha: ahí el piso legal de cada jornada cuesta $125.83 más que en Coacalco o en Guadalajara. Quien ajuste rol, horario y precio por plaza antes que los demás convierte esta cifra en margen; quien la absorba con un precio nacional la paga cada quincena. La sección 04 explica qué devuelve la frontera a cambio.</div></div></div>
     <div class="it"><div class="d num">3 de marzo de 2026</div><div class="x">Se publica la reforma constitucional al artículo 123 en materia de jornada laboral.</div></div>
     <div class="it"><div class="d num">23 de abril de 2026</div><div class="x">Segundo decreto arancelario: 185 fracciones, con vigencia hasta el 24 de abril de 2028 y ajustes a PROSEC.</div></div>
     <div class="it"><div class="d num">1 de mayo de 2026</div><div class="x">Reforma a la Ley Federal del Trabajo: la jornada máxima baja de 48 a 40 horas de forma escalonada hasta 2030, sin reducción de sueldos ni prestaciones. Se añade la fracción XXXIV al artículo 132.</div></div>
@@ -853,20 +988,20 @@ td.np{color:var(--n400);font-style:italic}
         <tr><td class="var">27 tiendas</td><td>Enlace Judío, con declaración de David Litchi</td><td class="num">Diciembre de 2014</td><td>Red en esa fecha</td></tr>
         <tr><td class="var">350–365 sucursales</td><td>Prensa de negocios y notas de tendencia</td><td class="num">2019–2023</td><td class="np">No reconciliable con ninguna otra cifra</td></tr>
         <tr><td class="var">24 tiendas en su web contra 356 en prensa</td><td>Poder Latam, que señala la contradicción explícitamente</td><td class="num">Mayo de 2020</td><td>La discrepancia ya era pública hace seis años</td></tr>
-        <tr class="hl"><td class="var">46 tiendas</td><td><b>David Litchi, co-CEO</b>, a Whitepaper.mx</td><td class="num">22 de abril de 2026</td><td>Cifra más reciente y de mayor jerarquía</td></tr>
+        <tr class="hl"><td class="var">46 tiendas</td><td><b>David Litchi, CEO</b>, a Whitepaper.mx</td><td class="num">22 de abril de 2026</td><td>Cifra más reciente y de mayor jerarquía</td></tr>
         <tr><td class="var">«más de 60 tiendas»</td><td>Vacantes corporativas de la propia empresa</td><td class="num">2026</td><td>Posiblemente incluye aperturas en proceso</td></tr>
       </tbody>
     </table>
   </div>
   <p class="cap">No constituyen una serie homogénea y no se grafican como tendencia. En todo el documento se usa la cifra de la dirección en abril de 2026: 46 tiendas. El localizador, consultado el 21 de octubre de 2026, lista sucursales en diecisiete entidades: consistente con ese orden de magnitud, no con 350.</p>
 
-  <div class="note"><b>Por qué lo señalamos.</b> Un prospecto reconoce de inmediato cuando alguien repitió una cifra de prensa sin verificarla. Aquí decimos lo que encontramos: la cifra de 350 circula desde hace años, no cuadra con el localizador ni con la dirección, y trabajamos con la que dio el co-CEO. Si hoy la correcta es otra, corregirla toma treinta segundos.</div>
+  <div class="note"><b>Por qué lo señalamos.</b> Un prospecto reconoce de inmediato cuando alguien repitió una cifra de prensa sin verificarla. Aquí decimos lo que encontramos: la cifra de 350 circula desde hace años, no cuadra con el localizador ni con la dirección, y trabajamos con la que dio el CEO. Si hoy la correcta es otra, corregirla toma treinta segundos.</div>
 
   <h3 class="sub">Lo que estos movimientos implican</h3>
   <div class="tabgrid">
     <div class="tabcard tc-imp" data-tab="Implicación">
       <h4>Crecer hacia la frontera es crecer hacia el costo laboral alto</h4>
-      <p>Tijuana, Mexicali y Ciudad Juárez están en la Zona Libre de la Frontera Norte, donde el piso salarial es 40 % superior al del resto del país desde enero de 2026. Las aperturas recientes se concentran justamente ahí.</p>
+      <p>Tijuana, Mexicali y Ciudad Juárez están en la Zona Libre de la Frontera Norte, donde el piso salarial es 40 % superior al del resto del país desde enero de 2026. Ciudad Juárez, abierta en abril de 2026, es la apertura más reciente de la compañía, y está en esa zona.</p>
       <span class="src">CONASAMI, resolución publicada en el DOF el 9 dic 2025.</span>
     </div>
     <div class="tabcard tc-sig" data-tab="Señal">
@@ -880,6 +1015,54 @@ td.np{color:var(--n400);font-style:italic}
       <span class="src">Hipótesis. No hay información pública sobre política de precios por plaza.</span>
     </div>
   </div>
+
+  <h3 class="sub">Entonces, ¿por qué abrir donde la mano de obra cuesta más?</h3>
+  <p class="body">Porque la frontera no solo cobra más: también devuelve. La franja norte tiene un régimen fiscal y arancelario propio que ninguna tienda del centro del país recibe. Lo que sigue responde las tres preguntas que conviene hacerse antes de juzgar esas aperturas.</p>
+  <div class="ledger">
+    <div class="lg-col cost">
+      <div class="lg-h">Lo que cuesta más</div>
+      <div class="lg-v num">+40<sup>%</sup></div>
+      <div class="lg-t">Piso salarial de la Zona Libre de la Frontera Norte frente al general: $440.87 contra $315.04 diarios desde el 1 de enero de 2026.</div>
+      <span class="tag t-fact">Hecho · CONASAMI</span>
+    </div>
+    <div class="lg-col give">
+      <div class="lg-h">Lo que la frontera devuelve</div>
+      <div class="bens">
+        <div class="ben">
+          <div class="ben-v num">8<sup>%</sup></div>
+          <div class="ben-t"><b>IVA a la mitad en la caja.</b> Las ventas en establecimientos de la región fronteriza norte causan IVA al 8 % y no al 16 %. Al mismo precio antes de impuesto, el precio de anaquel baja cerca de 7 %; al mismo precio de anaquel, el margen sube en esa proporción. Exige presentar aviso ante el SAT.</div>
+          <span class="tag t-fact">Hecho · vigente al menos hasta el 31 dic 2026</span>
+        </div>
+        <div class="ben">
+          <div class="ben-v num">2030</div>
+          <div class="ben-t"><b>Régimen arancelario propio.</b> Un decreto específico permite que ciertas mercancías entren a la región sin impuesto de importación o con tasa reducida. Se prorrogó el 25 de septiembre de 2026 hasta el 31 de diciembre de 2030. Cubre todo Baja California —Tijuana y Mexicali— y la franja de 20 km junto a la línea, donde está Ciudad Juárez. Exige registro como Empresa de la Frontera ante Economía.</div>
+          <span class="tag t-fact">Hecho · DOF 25 sep 2026</span>
+        </div>
+        <div class="ben">
+          <div class="ben-v num">20<sup>%</sup></div>
+          <div class="ben-t"><b>ISR reducido, con condiciones.</b> El mismo estímulo da un crédito equivalente a un tercio del ISR para contribuyentes inscritos en el padrón de la región. Sus requisitos de domicilio e ingresos hacen dudoso que aplique a una empresa con domicilio fiscal en la Ciudad de México.</div>
+          <span class="tag t-hip">Aplicabilidad por confirmar con su fiscalista</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="tabgrid">
+    <div class="tabcard tc-fact" data-tab="¿Es zona franca?">
+      <h4>No, en sentido estricto</h4>
+      <p>México no tiene una zona franca abierta al comercio minorista en esas ciudades. Lo que existe es la combinación de arriba: IVA diferenciado, un régimen arancelario fronterizo y el salario mínimo de la Zona Libre. «Zona libre» es el nombre del área salarial, no un régimen de importación sin impuestos.</p>
+      <span class="src">Decretos de estímulos y de arancel para la región fronteriza, DOF 31 dic 2025 y 25 sep 2026.</span>
+    </div>
+    <div class="tabcard tc-sig" data-tab="¿Menos aranceles?">
+      <h4>Sí, pero solo si la mercancía entra por ahí</h4>
+      <p>El arancel reducido aplica a lo que se importa para consumirse en la región, por una empresa registrada. Lo que llega a Tijuana desde un centro de distribución del Valle de México ya pagó la tarifa general, incluido el arancel de 2026. El beneficio existe en papel y se pierde en la logística.</p>
+      <span class="src">Si Fantasías Miguel importa directo a la frontera o surte desde el centro es información pública no identificada.</span>
+    </div>
+    <div class="tabcard tc-hip" data-tab="La lógica">
+      <h4>La frontera compensa, si se opera como frontera</h4>
+      <p>En la frontera el salario mínimo es 40 % más alto y la compra paga IVA al 8 %. Con aviso de IVA, registro de Empresa de la Frontera y abasto directo, el diferencial laboral puede quedar cubierto. Con un precio nacional y abasto desde el centro, la tienda fronteriza paga el costo alto sin cobrar el beneficio.</p>
+      <span class="src">Hipótesis. Qué beneficios tiene ya activos la compañía no es público; es una pregunta de la primera sesión.</span>
+    </div>
+  </div>
 </div>
 </template>
 <template id="s-geo">
@@ -888,40 +1071,44 @@ td.np{color:var(--n400);font-style:italic}
   <h2 class="sect">Una red, <b>dos formatos y dos zonas salariales</b>.</h2>
   <p class="slede">El localizador oficial permite reconstruir la red con domicilio, horario y teléfono. Lo que aparece no es una red homogénea: son tiendas de Centro Histórico y tiendas de plaza comercial, con horarios distintos, clientas distintas y —desde enero de 2026— pisos salariales distintos.</p>
 
-  <h3 class="sub">Lo que se puede verificar, y lo que no</h3>
-  <div class="pills" role="img" aria-label="Sucursales con domicilio verificable por entidad">
-    <div class="pill accent"><div class="vv num">9</div><div class="pbar" style="height:150px"></div><div class="lb">CDMX</div></div>
-    <div class="pill accent"><div class="vv num">6</div><div class="pbar" style="height:100px"></div><div class="lb">Edo. Méx.</div></div>
-    <div class="pill"><div class="vv num">4</div><div class="pbar" style="height:67px"></div><div class="lb">Nuevo León</div></div>
-    <div class="pill"><div class="vv num">4</div><div class="pbar" style="height:67px"></div><div class="lb">Jalisco</div></div>
-    <div class="pill"><div class="vv num">3</div><div class="pbar" style="height:50px"></div><div class="lb">Baja Cal.</div></div>
-    <div class="pill"><div class="vv num">2</div><div class="pbar" style="height:34px"></div><div class="lb">Querétaro</div></div>
-    <div class="pill"><div class="vv num">2</div><div class="pbar" style="height:34px"></div><div class="lb">Yucatán</div></div>
-    <div class="pill"><div class="vv num">2</div><div class="pbar" style="height:34px"></div><div class="lb">Puebla</div></div>
-    <div class="pill"><div class="vv num">2</div><div class="pbar" style="height:34px"></div><div class="lb">Chihuahua</div></div>
-    <div class="pill"><div class="vv num">1</div><div class="pbar" style="height:17px"></div><div class="lb">Ags.</div></div>
-    <div class="pill"><div class="vv num">1</div><div class="pbar" style="height:17px"></div><div class="lb">Coahuila</div></div>
-    <div class="pill"><div class="vv num">1</div><div class="pbar" style="height:17px"></div><div class="lb">Durango</div></div>
-    <div class="pill"><div class="vv num">1</div><div class="pbar" style="height:17px"></div><div class="lb">Gto.</div></div>
-    <div class="pill"><div class="vv num">1</div><div class="pbar" style="height:17px"></div><div class="lb">Q. Roo</div></div>
-    <div class="pill"><div class="vv num">1</div><div class="pbar" style="height:17px"></div><div class="lb">Veracruz</div></div>
+  <div class="mapcard">
+    <div class="mc-head">
+      <div>
+        <div class="mc-t">La red, tienda por tienda</div>
+        <div class="mc-s">41 sucursales trazadas en 16 entidades, más la fábrica de Tultitlán · haz clic en un punto</div>
+      </div>
+    </div>
+    <div class="mc-body">
+      <div class="mc-map" id="mapWrap">
+        <svg id="fmMap" viewBox="0 0 1000 634" role="img" aria-label="Mapa interactivo de las sucursales de Fantasías Miguel en México"></svg>
+        <div class="mc-tip" id="mapTip" hidden></div>
+        <div class="mc-ctrl">
+          <button type="button" id="zIn" aria-label="Acercar">+</button>
+          <button type="button" id="zOut" aria-label="Alejar">−</button>
+          <button type="button" id="zReset" aria-label="Ver todo el país">⤢</button>
+        </div>
+        <div class="mc-hint">Arrastra para moverte · usa los filtros para acercarte a una región</div>
+      </div>
+      <div class="mc-side">
+        <div class="mc-filters" id="mapFilters" role="group" aria-label="Filtrar por región"></div>
+        <div class="mc-stats">
+          <div class="ms"><div class="v num" id="stAll">41</div><div class="l">Tiendas</div></div>
+          <div class="ms"><div class="v num" id="stC">12</div><div class="l">Formato Centro</div></div>
+          <div class="ms"><div class="v num" id="stF">4</div><div class="l">En zona fronteriza</div></div>
+        </div>
+        <div class="mc-detail" id="mapDetail">
+          <div class="md-empty">Selecciona una tienda en el mapa para ver su domicilio, su horario publicado y de dónde sale el dato.</div>
+        </div>
+        <div class="mc-legend">
+          <span><i class="lg-dot c"></i>Formato Centro</span>
+          <span><i class="lg-dot p"></i>Formato plaza o suburbano</span>
+          <span><i class="lg-dot f"></i>Zona Libre de la Frontera Norte</span>
+          <span><i class="lg-sq"></i>Fábrica</span>
+        </div>
+      </div>
+    </div>
   </div>
-  <p class="cap">Cuarenta ubicaciones reconstruidas el 21 de octubre de 2026: treinta y ocho con domicilio tomado del localizador oficial y dos —Chihuahua capital y Ciudad Juárez— documentadas en notas de apertura, porque el localizador aún no las lista. Además aparecen Sonora, Sinaloa y San Luis Potosí, cuyo detalle no pudimos extraer completo. El total es consistente con las 46 tiendas declaradas por la dirección en abril de 2026. <b>Este documento no lleva mapa a escala</b> porque no pudimos georreferenciar la red completa con fuentes públicas, y un mapa incompleto sugiere una cobertura que no verificamos.</p>
-
-  <h3 class="sub">Dos formatos que comparten precio de lista</h3>
-  <div class="tw">
-    <table>
-      <thead><tr><th>Variable observable</th><th>Formato Centro</th><th>Formato plaza / suburbano</th></tr></thead>
-      <tbody>
-        <tr><td class="var">Ejemplos verificables</td><td>Uruguay 117–127 (Centro Histórico), GDL Hidalgo 520, MTY Benito Juárez Sur, Mérida calle 58, Puebla 2 Poniente, León Portal Bravo, Torreón, Durango, Aguascalientes</td><td>Satélite, Interlomas, Santa Fe, Plaza Ciudadela (Zapopan), Palomar, Angelópolis, Citadel (San Nicolás), Plaza Juárez Mall</td></tr>
-        <tr><td class="var">Horario publicado</td><td>Típicamente 10:00–19:30, lunes a domingo</td><td>Hasta 20:00 entre semana, domingo reducido en varias plazas</td></tr>
-        <tr><td class="var">Perfil probable de compra</td><td class="np">Información pública no identificada</td><td class="np">Información pública no identificada</td></tr>
-        <tr><td class="var">Renta y costo de ocupación</td><td class="np">Información pública no identificada</td><td class="np">Información pública no identificada</td></tr>
-        <tr><td class="var">Servicios declarados por tienda</td><td>Pickup y entrega a domicilio en la mayoría</td><td>Pickup y entrega a domicilio en la mayoría</td></tr>
-      </tbody>
-    </table>
-  </div>
-  <p class="cap">Clasificación cualitativa de los dos formatos a partir de domicilio y horario publicados. No es una segmentación interna de la compañía ni un scoring.</p>
+  <p class="cap">Treinta y siete sucursales con domicilio y horario tomados del localizador oficial el 22 de octubre de 2026; Puebla Centro y Angelópolis, del mismo localizador sin domicilio extraíble; Cancún y Hermosillo, de la página estatal del sitio y de Rappi; Chihuahua y Ciudad Juárez, de notas de apertura. El localizador lista además San Luis Potosí y Sinaloa, cuyo detalle no pudimos extraer: con ellas son 43 de las 46 que declara la dirección. <b>La ubicación de cada punto es aproximada, a nivel colonia o ciudad; no es una georreferencia del domicilio.</b> El formato es una clasificación nuestra a partir de la dirección, no una segmentación interna de la compañía.</p>
 
   <h3 class="sub">La aritmética de la cobertura</h3>
   <div class="tiles">
@@ -930,7 +1117,7 @@ td.np{color:var(--n400);font-style:italic}
     <div class="stile st-dark"><div class="v num">40<small>h</small></div><div class="l">de jornada por persona en 2030</div><div class="s">LFT reformada, DOF 1 may 2026. Sin reducción de sueldos ni prestaciones</div></div>
     <div class="stile st-lime"><div class="v num">+20<sup>%</sup></div><div class="l">de horas-persona adicionales para sostener la misma cobertura</div><div class="s">48 ÷ 40. Aritmética, no estimación: +4 % ya en 2027</div></div>
   </div>
-  <div class="note"><b>Lectura.</b> Las horas de apertura de una tienda no bajan con la reforma; las horas que puede aportar cada persona, sí. Mantener la misma presencia en piso con 40 horas por persona en vez de 48 exige una quinta parte más de horas-persona, o un rediseño del rol. Esa aritmética aplica a toda la red, pero cuesta 40 % más en Tijuana, Mexicali y Ciudad Juárez que en el resto, y las aperturas recientes están justamente ahí.</div>
+  <div class="note"><b>Lectura.</b> Las horas de apertura de una tienda no bajan con la reforma; las horas que puede aportar cada persona, sí. Mantener la misma presencia en piso con 40 horas por persona en vez de 48 exige una quinta parte más de horas-persona, o un rediseño del rol. Esa aritmética aplica a toda la red, pero cuesta 40 % más en Tijuana, Mexicali y Ciudad Juárez que en el resto, y la apertura más reciente de la compañía, Ciudad Juárez, está ahí.</div>
 </div>
 </template>
 
@@ -956,7 +1143,7 @@ td.np{color:var(--n400);font-style:italic}
       <tbody>
         <tr>
           <td class="var">Modelo de abasto</td>
-          <td class="hl">Importación directa + fabricación propia en Tultitlán + compra nacional</td>
+          <td class="hl">Importación directa + fabricación propia en Tultitlán (Arte Manual Decorativo, con exportación a cuatro países) + compra nacional</td>
           <td>Importación de surtido de bajo precio, alto componente asiático</td>
           <td>Envío directo de fábrica al domicilio, sin inventario local</td>
           <td>Compra a importadores y fabricantes nacionales; más de 200 expositores en la expo sectorial</td>
@@ -1005,9 +1192,9 @@ td.np{color:var(--n400);font-style:italic}
   <h3 class="sub">Qué significa la comparación</h3>
   <div class="panel mesh">
     <div class="eb">Lectura de cierre</div>
-    <h3>La diferencia se juega en el frente comercial, no en el operativo ni en el de canal.</h3>
-    <p>Contra Waldo's, Fantasías Miguel gana por especialización y pierde por escala: son órdenes de magnitud distintos de red. Contra las plataformas transfronterizas gana por inmediatez, asesoría y curaduría, y acaba de ganar 14.5 puntos de costo que el regulador le quitó a ellas sin que nadie moviera un precio. Contra las mercerías independientes gana por catálogo, surtido y respaldo.</p>
-    <p>En las tres comparaciones la ventaja es real y ya existe. Ninguna de las tres se defiende abriendo tiendas, y ninguna se pierde por no tener la app más rápida. Las tres se ganan o se pierden en la misma decisión: <b>a qué precio y con qué espacio entra cada referencia al anaquel, ahora que su costo se movió de forma desigual.</b> Esa es, por eliminación, la única variable de la tabla que Fantasías Miguel controla por completo.</p>
+    <h3>La diferencia se juega primero en la fábrica y después en el anaquel.</h3>
+    <p><b>Manufactura.</b> De todos los comparables, Fantasías Miguel es el único con planta propia. Waldo's, las plataformas y las mercerías compran lo que venden; Fantasías Miguel fabrica en Tultitlán diamantina, pegamento, pintura, lentejuela, velas y piezas de PVC, unicel y madera, y exporta parte de esa producción a Estados Unidos, Italia, Indonesia y Taiwán. En 2026 ese es el activo menos aprovechado de la tabla: lo que sale de Tultitlán no paga el arancel que desde enero encarece al importado, y cada referencia que la planta puede sustituir mejora su margen sin tocar el precio. Lo que la información pública no dice —superficie, plantilla, capacidad libre, costo por referencia— es precisamente lo primero que conviene medir.</p>
+    <p><b>Comercial.</b> Contra Waldo's, Fantasías Miguel gana por especialización y pierde por escala. Contra las plataformas transfronterizas gana por inmediatez, asesoría y curaduría, y acaba de ganar 14.5 puntos de costo que el regulador les quitó a ellas. Contra las mercerías gana por catálogo y respaldo. Las tres comparaciones se deciden en lo mismo: <b>qué referencia se fabrica, cuál se importa y a qué precio entra cada una al anaquel, ahora que su costo se movió de forma desigual.</b> Es la única variable de la tabla que Fantasías Miguel controla por completo.</p>
   </div>
 </div>
 </template>
@@ -1015,7 +1202,7 @@ td.np{color:var(--n400);font-style:italic}
 <template id="s-impl">
 <div class="view">
   <div class="eyebrow">07 · Implicaciones de ejecución</div>
-  <h2 class="sect">Cinco cosas que se vuelven difíciles <b>no por el tamaño, sino por la desigualdad</b>.</h2>
+  <h2 class="sect">Seis cosas que se vuelven difíciles <b>no por el tamaño, sino por la desigualdad</b>.</h2>
   <p class="slede">Nada de lo que sigue es un reproche a cómo opera la compañía. Son consecuencias aritméticas de que el costo de un catálogo amplio dejó de moverse en bloque y de que la red creció hacia plazas con una base de costo distinta.</p>
 
   <div class="fich">
@@ -1046,15 +1233,15 @@ td.np{color:var(--n400);font-style:italic}
     </div>
     <div class="fi">
       <div class="hn num">06</div>
-      <h4>El tráfico ya existe; la pregunta es qué se lleva cada visitante</h4>
-      <p>Cuatro millones de visitantes al año y un ticket cercano a $600 describen un negocio con demanda sana. En ese escenario, un peso de margen adicional se consigue antes mejorando la mezcla de lo que ya se vende que atrayendo gente nueva.</p>
+      <h4>La fábrica produce para temporadas que el anaquel todavía no confirma</h4>
+      <p>Una planta que surte temporadas fabrica diamantina, velas o piezas de madera semanas antes de que empiecen, con lotes que por eficiencia suelen ser largos, y la tienda solo confirma la demanda cuando la temporada ya arrancó. Si el plan de producción y el pedido de las tiendas no se leen con el mismo pronóstico, la planta optimiza su eficiencia y el anaquel paga la diferencia en faltantes o en sobrantes.</p>
     </div>
   </div>
 
   <div class="panel mesh">
     <div class="eb">Dónde entra London</div>
     <h3>En convertir el costo real de cada referencia en una decisión comercial que se tome todas las semanas.</h3>
-    <p>No proponemos tocar la curaduría, la fábrica ni la relación con la clienta: son la ventaja. Lo que London implementa es la capa que falta entre el pedimento y el anaquel — costo de aterrizaje por referencia con arancel aplicado, contribución por tienda y formato, y un rol de piso proyectado a la jornada de 2027 a 2030. Y lo implementamos dentro de la operación, con el equipo de la compañía, no en una presentación.</p>
+    <p>No proponemos tocar la curaduría ni la relación con la clienta: son la ventaja. Lo que London implementa es la capa que falta entre la fábrica, el pedimento y el anaquel — costo de aterrizaje por referencia con arancel aplicado, costo real de lo que se fabrica en Tultitlán, un plan de producción alineado a las temporadas, contribución por tienda y formato, y un rol de piso proyectado a la jornada de 2027 a 2030. Y lo implementamos dentro de la operación, con el equipo de la compañía, no en una presentación.</p>
     <p><b>El retorno se acuerda antes de empezar, se mide durante el proyecto y se audita un año después del cierre.</b> London garantiza por contrato un ROI de al menos 1:1 sobre la inversión del cliente; el promedio histórico de la firma es 5:1.</p>
   </div>
 </div>
@@ -1063,11 +1250,11 @@ td.np{color:var(--n400);font-style:italic}
 <template id="s-ia">
 <div class="view">
   <div class="eyebrow">08 · IA y agentes</div>
-  <h2 class="sect">Seis agentes para decisiones que hoy se toman <b>muchas veces y con prisa</b>.</h2>
-  <p class="slede">Empecemos por lo que no se automatiza. La curaduría de temporada no se automatiza: que alguien decida que la Navidad 2026 se llama Caramelo, Cascanueces y Polo Norte es criterio, oficio y riesgo, y es la razón por la que una clienta recorre la tienda en vez de abrir una app. La asesoría en piso tampoco. Lo que sí se puede automatizar es todo lo que ocurre alrededor de esas dos cosas.</p>
+  <h2 class="sect">Ocho agentes para decisiones que hoy se toman <b>muchas veces y con prisa</b>.</h2>
+  <p class="slede">Empecemos por lo que no se automatiza. La curaduría de temporada no se automatiza: que alguien decida que la Navidad 2026 se llama Caramelo, Cascanueces y Polo Norte es criterio, oficio y riesgo, y es la razón por la que una clienta recorre la tienda en vez de abrir una app. La asesoría en piso y el oficio de la fábrica tampoco. Lo que sí se puede automatizar es todo lo que ocurre alrededor: qué fabricar y cuándo, qué comprar, a qué tienda mandarlo y qué hacer con lo que sobra.</p>
 
   <div class="console">
-    <div class="chead"><span class="dot"></span><span>Consola de casos de uso · seis agentes propuestos</span></div>
+    <div class="chead"><span class="dot"></span><span>Consola de casos de uso · ocho agentes propuestos</span></div>
     <div class="cbody">
       <div class="clist" role="tablist" aria-label="Agentes propuestos" id="agList"></div>
       <div class="cpane" id="agPane" role="tabpanel"></div>
@@ -1076,11 +1263,11 @@ td.np{color:var(--n400);font-style:italic}
 
   <div class="panel">
     <div class="eb">Por qué el primero va primero</div>
-    <h3>El agente de contribución por referencia no es uno más de los seis: es el piso sobre el que se paran los otros cinco.</h3>
-    <p>Los cinco agentes siguientes optimizan sobre el margen que calcula el primero. Si el margen está mal —porque el costo de aterrizaje no trae el arancel aplicado, o porque el producto de Tultitlán carga el mismo costo promedio que el importado— los otros cinco automatizan el error más rápido. Por eso la propuesta no es empezar por la tecnología: es empezar por medir.</p>
+    <h3>El agente de contribución por referencia no es uno más de los ocho: es el piso sobre el que se paran los otros siete.</h3>
+    <p>Los siete agentes siguientes optimizan sobre el margen que calcula el primero. Si el margen está mal —porque el costo de aterrizaje no trae el arancel aplicado, o porque el producto de Tultitlán carga el mismo costo promedio que el importado— los otros siete automatizan el error más rápido. Por eso la propuesta no es empezar por la tecnología: es empezar por medir.</p>
   </div>
 
-  <div class="note warn"><b>Sin promesa de retorno.</b> Ninguno de estos seis casos lleva cifra de impacto, y es deliberado. No tenemos información interna de Fantasías Miguel y cualquier número que pusiéramos aquí sería inventado. Lo que sí declaramos en cada uno es la condición previa de datos: el punto exacto donde el caso se rompe si esa información no existe limpia y consistente. Ahí es donde se rompen, casi siempre.</div>
+  <div class="note warn"><b>Sin promesa de retorno.</b> Ninguno de estos ocho casos lleva cifra de impacto, y es deliberado. No tenemos información interna de Fantasías Miguel y cualquier número que pusiéramos aquí sería inventado. Lo que sí declaramos en cada uno es la condición previa de datos: el punto exacto donde el caso se rompe si esa información no existe limpia y consistente. Ahí es donde se rompen, casi siempre.</div>
 
   <div class="note">London México es socio certificado de servicios de la Claude Partner Network de Anthropic. Esa certificación es la capacidad con la que se implementan estos agentes; no es un argumento por sí misma. Si quieres ver cómo se ve implementado, la carta de recomendación de KRAM en la sección 13 lo describe en una línea: <b>agentes de IA Claude sobre el ERP que ya tenían, sin contratar módulos adicionales</b>.</div>
 </div>
@@ -1089,37 +1276,61 @@ td.np{color:var(--n400);font-style:italic}
 <template id="s-datos">
 <div class="view">
   <div class="eyebrow">09 · Datos y ecosistema digital</div>
-  <h2 class="sect">Tres preguntas que no se pueden responder desde afuera, <b>y qué cambia cada respuesta</b>.</h2>
-  <p class="slede">Hay datos operativos que ninguna fuente pública contiene y que, sin embargo, cambian materialmente el alcance de un proyecto. No los dejamos en blanco ni los adivinamos: describimos los dos escenarios plausibles de cada uno y qué trabajo corresponde a cada respuesta. Determinar en cuál está la operación es la primera parada del estudio de factibilidad, no una laguna de esta investigación.</p>
+  <h2 class="sect">Seis preguntas técnicas que no se responden desde afuera, <b>y qué cambia cada respuesta</b>.</h2>
+  <p class="slede">Son los seis datos que más mueven el alcance de un proyecto en Fantasías Miguel: costo, metro cuadrado, venta perdida, costo de fabricar, inventario de temporada y plan de producción. Ninguna fuente pública los contiene. No los adivinamos: para cada uno describimos los dos escenarios plausibles y qué trabajo corresponde a cada respuesta. Saber en cuál está la operación es la primera parada del estudio de factibilidad.</p>
 
-  <div class="bif">
-    <div class="q">1 · ¿El costo de aterrizaje ya se recalculó por fracción después del 1 de enero de 2026?</div>
-    <div class="sc2">
-      <div class="e a"><b>Escenario A · ya se recalculó</b>El maestro de artículos trae fracción arancelaria y el costeo aplica la cuota vigente por referencia. Entonces el trabajo no es construir el dato: es explotarlo. Contribución por referencia, por tienda y por formato en semanas, y la conversación se mueve directo a precio y espacio en anaquel.</div>
-      <div class="e b"><b>Escenario B · se usa costo promedio o histórico</b>La fracción vive en el pedimento y no llega a la ficha comercial. El trabajo empieza por integrar pedimento y maestro de artículos, y el primer entregable es un mapa de exposición: qué parte del catálogo subió, cuánto y cuál no se movió.</div>
+  <div class="bifs">
+    <div class="bif">
+      <div class="bk">Costo</div>
+      <div class="q">1 · ¿El costo de aterrizaje ya se recalculó por fracción arancelaria después del 1 de enero de 2026?</div>
+      <div class="sc2">
+        <div class="e a"><b>A · Ya se recalculó</b>El maestro de artículos trae fracción y cuota vigente. El trabajo es explotar el dato: contribución por referencia en semanas.</div>
+        <div class="e b"><b>B · Costo promedio o histórico</b>La fracción vive en el pedimento. Primero se integra pedimento con maestro y se entrega un mapa de exposición del catálogo.</div>
+      </div>
     </div>
-    <div class="res">Determinar en cuál de los dos está la operación toma una sesión de dos horas con compras y comercio exterior.</div>
+    <div class="bif">
+      <div class="bk">Espacio</div>
+      <div class="q">2 · ¿Existe rentabilidad por metro cuadrado, por tienda y por categoría?</div>
+      <div class="sc2">
+        <div class="e a"><b>A · Se mide</b>Hay área por categoría, renta y contribución por tienda. El trabajo es reasignar espacio en cada cambio de temporada hacia lo que más deja.</div>
+        <div class="e b"><b>B · Solo venta por tienda</b>Sin área por categoría ni costo de ocupación asignado. Se empieza por levantar el planograma y cruzarlo con la contribución.</div>
+      </div>
+    </div>
+    <div class="bif">
+      <div class="bk">Demanda</div>
+      <div class="q">3 · ¿Se registra la venta perdida: lo que se pidió y no había?</div>
+      <div class="sc2">
+        <div class="e a"><b>A · Se registra</b>Quiebres por referencia y tienda y búsquedas sin resultado en la tienda en línea. El agente de venta perdida se alimenta solo.</div>
+        <div class="e b"><b>B · Solo se ve lo vendido</b>La demanda no atendida desaparece. Se empieza por medir quiebre de anaquel contra inventario teórico en una muestra de tiendas.</div>
+      </div>
+    </div>
+    <div class="bif">
+      <div class="bk">Fábrica</div>
+      <div class="q">4 · ¿Tultitlán tiene costo estándar por referencia, con mano de obra e indirectos asignados?</div>
+      <div class="sc2">
+        <div class="e a"><b>A · Costeo estándar</b>Se puede comparar de inmediato cuánto cuesta fabricar contra cuánto cuesta importar la misma referencia con el arancel de 2026.</div>
+        <div class="e b"><b>B · Materia prima o promedio</b>El costo de fábrica subestima lo propio o lo sobrestima. Se reconstruye por referencia antes de decidir qué ampliar.</div>
+      </div>
+    </div>
+    <div class="bif">
+      <div class="bk">Temporada</div>
+      <div class="q">5 · ¿Se mide qué sobra al cerrar cada temporada y a qué precio sale?</div>
+      <div class="sc2">
+        <div class="e a"><b>A · Se mide</b>Sobrante, rebaja y recuperación por temporada y tienda. El trabajo es ajustar compra y producción de la siguiente con esa curva.</div>
+        <div class="e b"><b>B · Se absorbe en remates</b>El sobrante se liquida sin registro de su costo. Se empieza por medirlo: suele ser donde se va el margen de la temporada.</div>
+      </div>
+    </div>
+    <div class="bif">
+      <div class="bk">Producción</div>
+      <div class="q">6 · ¿La planta produce contra un pronóstico por temporada o contra reposición de inventario?</div>
+      <div class="sc2">
+        <div class="e a"><b>A · Plan por temporada</b>Existe un plan maestro con fechas de corte por temporada. El trabajo es conectarlo con el pedido sugerido de las tiendas.</div>
+        <div class="e b"><b>B · Reposición o lotes de eficiencia</b>La planta produce lo que le resulta eficiente, no lo que la temporada va a vender. Se empieza por un pronóstico común planta–tienda.</div>
+      </div>
+    </div>
   </div>
 
-  <div class="bif">
-    <div class="q">2 · ¿Existe una identidad única de clienta entre tienda, WhatsApp y comercio electrónico?</div>
-    <div class="sc2">
-      <div class="e a"><b>Escenario A · existe</b>Hay un registro que amarra la compra en tienda, la conversación de WhatsApp y el pedido en línea. Entonces ya es posible distinguir a la clienta que compra para su casa de la que compra para revender, y el trabajo es segmentar y armar reposición para la segunda.</div>
-      <div class="e b"><b>Escenario B · cada canal es anónimo</b>La tienda ve un ticket, el WhatsApp ve una conversación y el e-commerce ve un correo, y nadie los cruza. El trabajo empieza por un identificador común y por capturarlo sin fricción en caja — que es la parte difícil, no la tecnológica.</div>
-    </div>
-    <div class="res">La diferencia entre los dos escenarios es de meses de alcance, no de semanas.</div>
-  </div>
-
-  <div class="bif">
-    <div class="q">3 · ¿Las decenas de líneas de WhatsApp de sucursal están conectadas a algún sistema?</div>
-    <div class="sc2">
-      <div class="e a"><b>Escenario A · plataforma centralizada</b>Las conversaciones viven en una herramienta con historial, etiquetas y reportes. Entonces ya existe el registro de lo que la gente pide y no encuentra, y el agente de venta perdida se alimenta solo.</div>
-      <div class="e b"><b>Escenario B · teléfonos por tienda</b>Cada sucursal atiende desde un aparato y la conversación se pierde al cerrar el chat. Se está vendiendo bien y no se está midiendo nada. El trabajo empieza por conservar la conversación, no por responderla con un bot.</div>
-    </div>
-    <div class="res">Es la bifurcación más barata de resolver y probablemente la de mayor valor inmediato.</div>
-  </div>
-
-  <div class="note"><b>Por qué lo planteamos así.</b> Lo planteamos así porque ya vimos venir la pregunta y tenemos un plan para cada respuesta, en vez de escribir un párrafo genérico sobre transformación digital. Si las tres respuestas son el Escenario A, el proyecto es más corto, más barato y empieza por el lado comercial. Eso también es información útil.</div>
+  <div class="note"><b>Por qué lo planteamos así.</b> Las seis respuestas definen el tamaño y el orden del proyecto. Si la mayoría cae en el escenario A, el trabajo empieza directamente en precio, espacio y plan de producción, y los resultados llegan antes. Si cae en B, la primera fase construye el dato y el retorno se mide sobre esa base. En los dos casos, determinarlo toma unas cuantas sesiones de trabajo, no meses.</div>
 </div>
 </template>
 <template id="s-outlook">
@@ -1156,8 +1367,8 @@ td.np{color:var(--n400);font-style:italic}
 <template id="s-hip">
 <div class="view">
   <div class="eyebrow">11 · Hipótesis</div>
-  <h2 class="sect">Seis hipótesis <b>formuladas para poder ser refutadas</b>.</h2>
-  <p class="slede">Cada una está escrita de forma que una sola consulta a las bases de la compañía la confirme o la tire. Si cuatro de las seis resultan falsas, el documento habrá hecho su trabajo igual: habremos acotado la conversación a las dos que quedan.</p>
+  <h2 class="sect">Seis hipótesis <b>para dimensionar y validar en un prediagnóstico</b>.</h2>
+  <p class="slede">Cada una se convierte en pesos con una consulta a las bases de la compañía. El prediagnóstico las dimensiona, las ordena por el margen que mueven y dice cuáles justifican un proyecto. Es la forma más corta de pasar de una lectura externa a un número que se pueda poner sobre la mesa del consejo.</p>
 
   <div class="fich">
     <div class="fi">
@@ -1206,7 +1417,7 @@ td.np{color:var(--n400);font-style:italic}
       <dl>
         <dt>Indicador a revisar</dt><dd>Dispersión de tickets: peso de los tickets muy por encima de los $600 promedio y su frecuencia de repetición.</dd>
         <dt>Impacto posible</dt><dd>Existe un segmento de reventa y servicio de eventos atendido como si fuera público general.</dd>
-        <dt>Información necesaria</dt><dd>Tickets, facturación, conversaciones de WhatsApp si están registradas.</dd>
+        <dt>Información necesaria</dt><dd>Tickets, facturación y compras en línea.</dd>
         <dt>Área</dt><dd>Comercial y mercadotecnia</dd>
       </dl>
     </div>
@@ -1233,11 +1444,11 @@ td.np{color:var(--n400);font-style:italic}
   <div class="inps">
     <div class="inp"><div class="n num">1</div><h4>Alcance y estrategia del estudio</h4>
       <p>Entendimiento de los retos estratégicos, definición de alcance por áreas, responsables y ubicación geográfica, designación del contacto o <i>sponsor</i> del estudio, y entendimiento del modelo de gobierno: consejo, socios y tomadores de decisión.</p>
-      <b class="fm">Para Fantasías Miguel: entran compras y comercio exterior, comercial y precios, operación de tienda, la fábrica de Tultitlán y una muestra de sucursales que incluya los dos formatos —Centro y plaza— y al menos una plaza fronteriza.</b>
+      <b class="fm">Para Fantasías Miguel: entran compras y comercio exterior, comercial y precios, operación de tienda, la fábrica de Tultitlán —producción, costos y almacén de producto terminado— y una muestra de sucursales que incluya los dos formatos —Centro y plaza— y al menos una plaza fronteriza.</b>
     </div>
     <div class="inp"><div class="n num">2</div><h4>Recolección de información básica</h4>
       <p>Firma de NDA, inducción general de la empresa, organigramas, estados financieros, indicadores de juntas directivas y operativas, manuales de proceso o sistemas de calidad, y reunión de perfilamiento. Aquí es donde se necesita acceso a las bases de datos del cliente; sin eso, el ejercicio se queda en observación y pierde la mitad de su valor.</p>
-      <b class="fm">Para Fantasías Miguel: maestro de artículos con fracción arancelaria y origen, costeo con arancel aplicado, venta por referencia y por tienda, y roles de piso con horas de apertura son los cuatro archivos que más pesan.</b>
+      <b class="fm">Para Fantasías Miguel: maestro de artículos con fracción arancelaria y origen, costeo con arancel aplicado, costo estándar y plan de producción de Tultitlán, venta por referencia y por tienda, y roles de piso con horas de apertura son los cinco archivos que más pesan.</b>
     </div>
     <div class="inp"><div class="n num">3</div><h4>Comunicación y entrevistas</h4>
       <p>Diseño y acuerdo del plan de entrevistas con apoyo del <i>sponsor</i>, <i>kick off</i> oficial con objetivos, alcance y factores clave de éxito, ejecución de las entrevistas y reuniones de validación de oportunidades. Las entrevistas son el corazón del estudio: mandos medios y personal de piso saben dónde está el problema mucho antes que cualquier reporte.</p>
@@ -1388,7 +1599,7 @@ td.np{color:var(--n400);font-style:italic}
   <div class="leg">
     <div class="lg a"><b>Hecho</b>Información respaldada por una fuente identificable y fechada.</div>
     <div class="lg b"><b>Señal</b>Indicio de tendencia que por sí solo no demuestra una conclusión.</div>
-    <div class="lg c"><b>Hipótesis</b>Interpretación estratégica derivada de los hechos. Refutable.</div>
+    <div class="lg c"><b>Hipótesis</b>Interpretación estratégica derivada de los hechos, que el prediagnóstico dimensiona con datos internos.</div>
     <div class="lg d"><b>Implicación</b>Qué podría significar esa hipótesis para el negocio.</div>
   </div>
 
@@ -1411,19 +1622,19 @@ td.np{color:var(--n400);font-style:italic}
       <p>El decreto opera por fracción y la clasificación de cada referencia depende de material y uso. Citamos los rangos publicados a nivel de sector. Cuál aplica a cada familia de producto de Fantasías Miguel es trabajo de pedimento, no de prensa.</p>
     </div>
     <div class="tabcard tc-imp" data-tab="Limitación">
-      <h4>Sin mapa</h4>
-      <p>Reconstruimos cuarenta domicilios del localizador oficial, pero no pudimos georreferenciar la red completa. Un mapa con la mitad de los puntos sugiere una cobertura que no verificamos, así que mostramos la distribución por entidad y lo decimos.</p>
+      <h4>Mapa con ubicación aproximada</h4>
+      <p>Trazamos 41 sucursales con datos de fuente pública, pero sin georreferencia del domicilio: cada punto está a nivel colonia o ciudad. Sirve para leer la forma de la red, no para medir distancias entre tiendas.</p>
     </div>
     <div class="tabcard tc-imp" data-tab="Limitación">
-      <h4>Lo que no se investigó a propósito</h4>
-      <p>No tocamos gobierno corporativo, estructura accionaria ni relaciones familiares más allá de lo que la propia dirección ha declarado en entrevistas públicas. No es materia de este análisis.</p>
+      <h4>La fábrica, sin tamaño ni plantilla</h4>
+      <p>No hay dato público confiable de superficie, plantilla ni capacidad de la planta de Tultitlán. Los directorios derivados del DENUE dan rangos de personal incompatibles entre sí y no los citamos. Las tres cifras se levantan en el recorrido de planta del estudio de factibilidad.</p>
     </div>
   </div>
 
   <h3 class="sub">Fuentes</h3>
   <ol class="srcs">
-    <li>Whitepaper.mx, entrevista con David Litchi, co-CEO de Fantasías Miguel, 22 de abril de 2026. Cifras de 46 tiendas, 4 millones de visitantes anuales, ticket promedio cercano a $600, fábrica en el Estado de México y origen histórico de la compañía. <a href="https://www.whitepaper.mx/p/whitepaper-hoy-5ec" target="_blank" rel="noopener">whitepaper.mx</a></li>
-    <li>Fantasías Miguel, localizador oficial de sucursales y catálogo en línea, consultados el 21 de octubre de 2026. Domicilios, horarios, WhatsApp por tienda, servicios declarados, temporadas y tendencias de Navidad 2026. <a href="https://fantasiasmiguel.com/pages/ubicatusucursal" target="_blank" rel="noopener">fantasiasmiguel.com</a></li>
+    <li>Whitepaper.mx, entrevista con David Litchi, CEO de Fantasías Miguel, 22 de abril de 2026. Cifras de 46 tiendas, 4 millones de visitantes anuales, ticket promedio cercano a $600 y origen histórico de la compañía. <a href="https://www.whitepaper.mx/p/whitepaper-hoy-5ec" target="_blank" rel="noopener">whitepaper.mx</a></li>
+    <li>Fantasías Miguel, localizador oficial de sucursales y catálogo en línea, consultados el 21 y 22 de octubre de 2026. Domicilios, horarios, WhatsApp por tienda, servicios declarados, temporadas y tendencias de Navidad 2026. <a href="https://fantasiasmiguel.com/pages/ubicatusucursal" target="_blank" rel="noopener">fantasiasmiguel.com</a></li>
     <li>Fantasías Miguel, sitio oficial de empleo y vacantes publicadas en 2026. Fábrica de Tultitlán, exportación a Estados Unidos, Italia e Indonesia, certificación Great Place To Work por tres años consecutivos, horarios de turno y sueldos semanales por plaza. <a href="https://fantasias-miguel.viterbit.site/" target="_blank" rel="noopener">fantasias-miguel.viterbit.site</a></li>
     <li>Diario Oficial de la Federación, 29 de diciembre de 2025: Decreto por el que se reforman diversas fracciones arancelarias de la Tarifa de la Ley de los Impuestos Generales de Importación y de Exportación. Vigente desde el 1 de enero de 2026.</li>
     <li>Expansión, «México publica decreto que cierra la puerta "barata" a China y a otros países sin TLC», 29 de diciembre de 2025. <a href="https://expansion.mx/economia/2025/12/29/mexico-decreto-cierra-puerta-barata-china-y-paises-sin-tlc" target="_blank" rel="noopener">expansion.mx</a></li>
@@ -1437,6 +1648,11 @@ td.np{color:var(--n400);font-style:italic}
     <li>Forbes México: entrevista con Daniel Litchi sobre manejo de deuda y la devaluación de 1995.</li>
     <li>Expo Mercería y Manualidades, directorio de expositores de la edición 2026 y datos del evento.</li>
     <li>Wikipedia y prensa de negocios para la escala de red de Waldo's y el contexto de cadenas de proximidad y descuento en México, 2025–2026.</li>
+    <li>Fantasías Miguel, página «Únete a la familia», consultada el 22 de octubre de 2026. Fábrica de Arte Manual Decorativo en Tultitlán, productos que elabora, exportación a Estados Unidos, Italia, Indonesia y Taiwán, y plantilla de más de 2,500 colaboradores. <a href="https://fantasiasmiguel.com/pages/unete" target="_blank" rel="noopener">fantasiasmiguel.com/pages/unete</a></li>
+    <li>Arte Manual Decorativo, S.A. de C.V., página de empresa en LinkedIn: razón social, domicilio y planta en Tultitlán. Directorios empresariales derivados del DENUE consultados y descartados por inconsistentes en personal ocupado.</li>
+    <li>Diario Oficial de la Federación, 31 de diciembre de 2025: decreto que prorroga hasta el 31 de diciembre de 2026 los estímulos fiscales de IVA e ISR para la región fronteriza norte. <a href="https://dof.gob.mx/nota_detalle.php?codigo=5777697&amp;fecha=31%2F12%2F2025" target="_blank" rel="noopener">dof.gob.mx</a></li>
+    <li>Diario Oficial de la Federación, 25 de septiembre de 2026: decreto que prorroga hasta el 31 de diciembre de 2030 el impuesto general de importación para la región fronteriza y la franja fronteriza norte. <a href="https://sidof.segob.gob.mx/notas/docFuente/5799677" target="_blank" rel="noopener">sidof.segob.gob.mx</a></li>
+    <li>El Heraldo de México y Concanaco Servytur, 27 y 28 de septiembre de 2026: alcance territorial del régimen arancelario fronterizo y registro como Empresa de la Frontera.</li>
     <li>Comercializadora KRAM, carta de recomendación firmada por Andrés Sevilla, Director General, Tultitlán, junio de 2026, y hoja de caso de éxito del proyecto IMPULSA. Documentos en poder de London, enlazados desde la sección 13.</li>
     <li>London Consulting Group México, páginas de Growth Stories y Nuestros Clientes, consultadas el 21 de octubre de 2026. <a href="https://londoncg.mx/growth-stories" target="_blank" rel="noopener">londoncg.mx/growth-stories</a></li>
   </ol>
@@ -1477,12 +1693,13 @@ td.np{color:var(--n400);font-style:italic}
 </div>
 </template>
 
+<script type="application/json" id="MAPDATA">{"W":1000.0,"H":634.2,"states":[{"id":"MX-ZAC","n":"Zacatecas","d":"M551.8,296.0L547.3,302.7L544.2,303.2L541.9,307.9L537.1,310.4L536.1,314.7L537.3,316.2L534.5,321.8L528.6,323.8L524.3,330.2L517.1,333.9L515.4,337.0L511.7,337.7L508.8,336.5L506.9,338.9L508.4,345.8L506.9,354.2L514.6,360.2L518.8,361.4L521.8,366.4L527.4,365.6L534.7,358.9L538.0,362.1L533.7,373.2L534.9,380.1L531.3,388.1L520.7,381.7L516.3,380.6L514.2,375.0L505.1,368.5L503.2,371.3L495.3,375.1L488.5,388.5L491.5,392.8L492.2,397.9L495.6,400.1L493.8,405.1L486.5,410.5L482.9,410.4L481.8,413.6L479.8,414.7L473.4,415.7L465.9,413.4L464.0,410.2L460.9,409.5L467.1,405.2L466.8,403.2L463.6,402.9L462.5,399.8L466.8,396.9L467.0,391.6L479.3,383.7L481.7,375.7L477.8,374.5L478.2,371.5L475.5,371.3L473.2,372.2L474.3,375.9L470.2,380.4L463.4,381.0L462.8,379.6L467.5,370.5L466.8,368.1L463.3,365.8L458.2,367.3L458.2,376.1L457.8,377.6L456.3,377.3L454.8,375.1L454.9,371.0L460.3,361.2L458.1,360.0L452.1,362.3L454.3,369.9L453.0,371.4L450.5,372.2L451.1,367.7L447.3,369.1L446.8,372.9L445.2,372.5L443.8,374.0L442.4,372.3L443.6,365.0L449.1,360.6L448.4,348.2L450.8,344.3L452.5,334.8L458.9,328.2L456.8,312.9L460.1,311.6L471.2,299.8L478.8,301.0L482.9,300.1L487.5,302.1L488.4,300.9L498.1,300.5L497.6,298.7L498.8,298.0L497.5,293.0L496.0,292.5L497.0,286.4L492.6,282.2L492.3,277.8L499.8,275.8L511.5,276.5L517.7,279.9L522.8,285.8L526.1,285.7L526.9,290.1L538.0,288.9L543.6,296.2L546.2,297.2L549.2,295.4L551.8,296.0Z"},{"id":"MX-YUC","n":"Yucatán","d":"M964.6,399.5L965.0,406.1L963.2,412.1L964.7,417.3L959.9,428.0L950.4,434.4L943.7,434.3L941.9,437.7L942.2,440.4L939.3,438.4L937.7,441.9L928.1,446.2L926.1,449.1L923.8,448.7L912.8,454.2L908.4,454.4L906.4,460.4L904.8,455.5L899.5,448.0L894.7,445.3L888.1,433.7L885.5,435.6L882.4,434.6L881.2,432.1L876.1,431.5L876.3,422.3L875.3,422.0L877.0,416.7L885.2,410.6L892.4,407.7L924.2,402.5L930.4,400.1L931.1,398.3L942.0,397.2L946.4,394.9L955.4,397.1L957.3,398.9L964.6,399.5Z"},{"id":"MX-VER","n":"Veracruz","d":"M658.3,399.7L656.8,403.3L656.2,401.6L658.3,399.7ZM646.2,374.0L649.7,393.6L653.1,400.3L655.6,400.8L655.8,404.6L665.3,426.9L688.0,454.0L692.7,471.5L697.8,475.1L699.8,479.6L702.8,480.0L705.0,486.5L709.4,488.6L709.4,489.6L706.2,488.3L706.3,491.2L709.6,490.2L709.9,488.8L715.5,491.1L727.3,491.4L731.7,495.8L738.6,497.0L744.5,505.1L745.2,508.1L748.5,509.7L762.2,506.9L760.0,507.8L761.7,519.0L766.5,523.2L772.1,525.8L773.7,535.2L775.5,536.7L767.9,542.2L732.4,540.0L732.1,536.4L723.6,527.4L726.0,524.3L724.3,523.2L714.0,528.3L706.4,528.6L703.5,520.7L706.9,513.7L705.0,508.4L698.6,507.3L696.3,508.4L693.1,504.3L687.3,501.9L685.8,497.3L686.5,495.7L683.8,493.9L681.7,500.5L679.4,497.8L676.2,496.8L671.5,499.0L669.4,494.1L663.7,491.8L663.2,486.7L665.7,482.3L665.2,474.3L672.0,473.5L671.3,471.2L661.4,467.3L660.0,461.4L667.9,442.7L659.2,439.6L654.6,444.6L652.8,442.1L649.4,441.7L648.8,433.7L650.3,432.8L652.3,433.9L654.1,430.8L649.7,426.9L650.0,424.8L647.7,423.9L649.3,423.0L649.3,420.7L645.3,420.6L641.7,428.2L638.8,427.5L627.1,437.5L624.0,433.2L625.4,424.4L629.6,420.0L633.6,421.4L634.0,416.5L636.3,413.9L633.2,409.2L628.0,409.5L624.2,406.5L622.9,397.9L621.3,397.6L620.2,393.5L625.7,389.6L621.9,384.3L625.0,383.3L624.9,379.3L629.4,378.3L627.1,373.0L618.7,371.3L617.7,369.8L625.0,368.2L628.0,369.8L630.5,369.2L630.7,367.5L633.8,367.1L639.8,370.9L643.7,375.7L646.2,374.0ZM651.7,387.9L660.5,397.2L657.2,406.4L658.9,398.0L651.6,389.6L651.7,387.9Z"},{"id":"MX-TLA","n":"Tlaxcala","d":"M621.6,466.4L618.8,463.7L628.8,461.5L631.7,458.2L637.2,459.3L639.9,456.7L646.4,462.4L646.1,464.3L649.2,464.1L653.8,468.6L652.5,470.7L648.1,471.0L644.8,474.9L641.3,473.8L636.5,477.3L631.4,474.5L623.9,466.5L621.6,466.4Z"},{"id":"MX-TAM","n":"Tamaulipas","d":"M657.0,272.5L654.0,281.4L653.9,278.6L657.0,272.5ZM646.2,374.0L643.7,375.7L639.8,370.9L633.8,367.1L630.7,367.5L630.5,369.2L628.0,369.8L625.0,368.2L613.8,370.2L611.5,368.7L603.0,369.6L598.2,361.4L593.4,357.7L591.4,358.0L590.6,359.9L577.3,355.8L577.2,346.6L575.3,344.2L573.9,337.7L578.7,337.3L578.5,331.6L581.5,324.7L584.4,323.1L588.4,323.8L591.5,320.6L594.3,321.1L587.7,310.1L588.8,301.6L587.2,298.4L584.7,298.1L585.2,296.1L591.5,292.2L593.2,289.6L595.3,289.7L598.6,285.8L599.6,287.6L600.9,287.0L604.3,281.9L602.7,278.7L606.4,275.2L607.8,276.7L611.2,277.0L613.4,273.1L621.0,270.5L626.9,263.6L622.7,261.5L622.8,248.9L621.6,245.8L610.8,247.1L608.5,243.5L603.0,241.5L604.1,241.1L603.3,237.8L600.8,238.5L599.4,235.3L597.6,235.4L593.8,227.1L591.5,226.9L590.5,224.5L587.6,223.4L588.4,217.8L584.4,216.1L584.2,214.7L587.3,210.0L585.3,199.8L583.7,198.7L584.9,195.7L579.4,195.0L580.3,191.8L583.7,190.8L586.1,188.3L590.1,189.2L592.7,192.0L592.2,194.1L593.7,194.8L592.1,200.9L594.9,203.0L594.9,210.9L599.9,216.6L603.4,227.6L605.8,229.8L605.2,231.3L606.4,232.6L614.8,233.6L618.7,237.6L626.0,238.6L633.6,244.5L645.7,244.2L650.0,245.6L657.5,251.8L659.3,251.5L660.1,248.7L666.3,247.9L664.7,258.8L657.7,272.6L656.7,272.3L658.6,266.9L654.2,264.4L653.0,265.8L654.8,267.0L653.5,269.0L654.3,270.8L653.4,271.1L653.0,269.4L652.0,270.2L651.5,268.1L649.3,268.3L647.2,271.7L650.0,274.7L647.4,281.3L650.4,283.0L647.7,285.8L648.8,292.9L647.7,298.2L646.9,295.8L644.1,297.0L646.3,302.7L647.4,299.8L646.8,311.8L645.6,312.1L646.7,312.6L646.8,321.5L647.9,322.0L647.0,325.5L647.6,326.4L648.0,322.7L646.9,353.0L642.9,362.2L644.1,363.1L643.7,367.8L646.2,374.0Z"},{"id":"MX-TAB","n":"Tabasco","d":"M811.5,493.3L813.7,499.1L817.6,501.7L818.8,501.3L823.4,511.4L828.8,516.1L835.0,518.1L838.7,517.2L839.0,512.4L842.5,512.2L857.7,518.6L857.4,538.7L844.3,538.9L846.0,537.3L844.6,535.1L837.3,532.1L838.3,528.8L836.7,524.6L833.5,523.1L832.9,519.5L828.4,519.5L826.1,518.0L825.2,520.3L820.6,519.7L820.0,523.8L815.9,525.3L802.6,535.5L799.7,531.4L796.0,530.6L796.4,528.3L793.4,524.4L795.2,518.8L792.3,519.0L786.9,515.4L784.2,516.5L783.3,525.4L779.3,530.1L779.2,532.2L776.1,536.1L774.1,535.6L772.1,525.8L766.5,523.2L761.7,519.0L760.0,507.8L767.8,505.0L768.0,506.6L771.3,506.0L772.5,503.8L776.6,503.9L777.2,501.7L782.7,500.4L789.3,500.1L790.4,500.6L789.7,502.5L792.6,502.3L790.8,500.7L798.5,500.1L805.0,494.6L811.5,493.3Z"},{"id":"MX-SON","n":"Sonora","d":"M196.2,133.0L198.9,140.6L195.4,150.3L186.9,145.7L189.7,143.1L189.3,139.1L190.9,134.3L196.2,133.0ZM248.4,198.8L250.2,201.6L248.4,200.5L248.4,198.8ZM305.2,57.5L308.3,68.3L307.7,72.1L305.7,73.0L309.1,76.3L310.5,80.5L309.8,83.5L313.5,94.5L312.3,98.6L314.1,100.3L311.8,111.0L313.7,112.8L314.7,121.2L313.8,133.9L311.7,135.3L311.6,138.7L309.8,140.3L309.9,148.0L308.2,152.9L308.7,159.0L313.4,162.3L307.2,166.9L303.4,165.1L298.5,166.8L297.2,168.5L299.4,170.6L298.6,174.0L304.0,179.5L303.6,184.7L307.7,187.6L311.7,197.1L309.9,208.5L314.3,210.8L319.0,210.5L319.0,211.6L314.7,217.6L315.0,220.7L312.7,221.4L310.7,225.7L305.1,227.4L304.4,231.6L296.7,235.9L292.8,231.3L292.2,234.0L289.1,227.5L283.1,220.6L281.8,220.0L280.7,222.4L276.9,222.9L272.8,220.5L269.6,209.3L267.4,207.6L265.2,208.7L257.7,206.3L252.2,201.6L252.2,198.6L249.9,197.9L247.6,189.8L249.4,187.6L248.5,183.2L250.4,181.8L241.5,178.3L239.4,179.7L239.9,181.8L237.2,180.0L236.9,178.3L233.6,178.9L230.6,176.8L221.8,163.9L213.9,160.4L212.3,155.8L206.7,149.6L208.0,148.8L208.7,150.3L209.5,148.7L204.0,146.3L201.9,143.0L199.6,142.3L199.8,137.3L197.8,134.8L197.7,130.3L192.5,129.3L193.2,124.2L186.9,115.9L184.3,109.5L181.7,108.6L181.0,97.6L178.5,95.3L177.1,89.1L171.4,81.4L169.9,76.3L172.1,68.5L171.0,62.9L167.2,60.1L154.6,57.7L153.5,51.7L146.5,47.4L144.4,47.0L141.8,51.7L138.3,51.6L124.5,42.1L120.3,41.2L112.2,36.1L111.0,34.9L112.4,25.4L110.6,23.0L114.4,15.0L117.6,14.9L233.8,57.6L305.2,57.5ZM123.1,42.0L124.0,43.0L122.2,42.4L123.1,42.0ZM118.4,39.7L122.2,43.3L122.5,45.5L118.3,43.0L118.4,39.7Z"},{"id":"MX-SIN","n":"Sinaloa","d":"M324.9,279.0L327.3,280.8L327.7,286.7L324.9,282.6L324.9,279.0ZM318.9,276.4L325.1,283.3L326.1,286.4L318.9,276.4ZM291.4,235.2L293.3,235.8L292.6,237.4L294.0,238.2L295.4,237.0L293.1,234.2L292.8,231.3L296.7,235.9L304.4,231.6L305.1,227.4L310.2,226.2L312.7,221.4L315.0,220.7L314.7,217.6L319.0,210.5L325.9,210.7L326.0,214.3L328.3,214.3L329.6,217.2L329.5,224.9L335.2,234.7L336.7,240.5L348.3,243.2L351.9,249.3L352.6,253.3L356.3,257.4L352.8,262.1L354.3,263.7L351.9,276.6L356.1,283.4L355.7,285.2L360.7,286.1L361.8,289.4L363.5,289.7L369.6,304.7L374.0,304.2L378.3,300.2L385.1,302.9L389.9,309.1L393.6,322.4L398.2,328.4L403.1,345.0L407.4,344.5L410.0,347.2L405.8,356.1L408.7,361.5L408.3,365.2L401.6,362.9L400.4,357.7L400.6,366.5L396.0,359.2L390.1,354.3L379.3,341.4L377.9,342.0L374.9,335.5L366.1,326.7L363.6,320.3L354.3,311.6L355.4,310.0L353.8,310.7L335.3,298.0L344.4,303.7L345.3,301.6L344.1,298.2L341.6,297.2L341.7,298.9L340.3,299.2L339.0,297.4L336.9,297.9L334.7,294.9L329.7,293.1L327.1,288.3L329.3,289.4L330.2,287.9L328.7,284.4L329.4,282.0L327.1,277.9L324.1,277.1L321.4,273.9L319.3,273.9L317.9,271.8L317.1,274.4L314.9,271.7L308.1,268.3L308.3,266.9L306.7,267.3L304.8,264.5L305.6,262.8L303.1,261.3L301.1,261.5L301.7,263.5L300.2,265.1L298.9,263.3L296.8,264.8L294.5,262.2L298.8,260.9L300.5,259.3L300.1,257.7L297.5,258.4L296.4,260.7L293.5,260.6L290.9,257.2L291.0,258.7L287.8,258.5L289.1,258.2L289.2,255.7L284.8,253.5L284.6,246.4L290.4,235.4L288.7,240.5L289.6,241.0L291.4,235.2Z"},{"id":"MX-SLP","n":"San Luis Potosí","d":"M574.0,340.3L577.2,346.6L577.0,354.9L578.6,356.9L590.6,359.9L592.6,357.3L598.2,361.4L603.0,369.6L611.5,368.7L627.9,373.9L629.4,378.3L624.9,379.3L625.0,383.3L621.9,384.3L625.7,389.6L620.2,393.5L621.3,397.6L622.9,397.9L623.1,402.0L621.0,402.0L617.4,408.0L616.0,407.2L613.3,409.4L610.2,405.0L606.3,405.6L600.3,397.2L597.8,397.4L596.4,400.8L590.2,400.7L586.8,396.3L581.1,400.2L578.3,399.1L575.6,400.0L568.6,394.1L563.8,392.5L561.9,397.1L556.6,397.9L547.0,391.5L533.2,388.0L531.8,387.1L535.4,378.1L533.7,373.2L538.1,363.0L535.6,358.9L532.9,359.8L527.4,365.6L522.5,366.6L518.8,361.4L514.6,360.2L506.9,354.2L508.4,345.8L506.9,338.9L508.0,336.8L515.4,337.0L517.1,333.9L524.3,330.2L528.6,323.8L534.5,321.8L537.3,316.2L536.1,314.7L537.1,310.4L541.9,307.9L544.2,303.2L547.3,302.7L551.1,296.5L553.2,299.4L556.3,299.8L556.5,302.5L555.0,304.4L561.6,316.1L561.3,321.5L562.7,324.4L561.2,331.4L562.9,340.2L566.3,342.9L569.2,339.4L574.0,340.3Z"},{"id":"MX-ROO","n":"Quintana Roo","d":"M989.8,429.3L987.1,434.3L981.5,439.8L980.8,435.3L983.7,430.6L986.4,431.0L989.8,429.3ZM977.7,396.1L974.9,398.2L972.4,398.7L971.9,397.5L977.7,396.1ZM914.7,516.5L914.4,513.4L918.1,508.3L917.9,498.6L915.9,492.3L918.9,474.2L914.6,468.0L906.4,460.4L907.7,455.0L912.8,454.2L923.8,448.7L926.1,449.1L928.1,446.2L937.7,441.9L939.3,438.4L942.2,440.4L941.9,437.7L943.7,434.3L950.4,434.4L959.9,428.0L964.7,417.3L963.2,412.1L965.0,406.1L964.6,399.5L970.8,401.3L975.5,401.1L977.9,400.0L978.2,396.3L981.1,397.2L984.9,402.3L986.1,407.3L987.7,402.2L987.4,409.5L989.1,411.6L982.5,424.7L973.5,433.1L968.3,441.3L966.5,446.3L967.2,453.0L965.9,455.3L963.4,455.8L961.4,459.2L958.4,460.7L958.1,462.1L961.2,465.2L962.3,463.6L965.0,464.0L965.7,462.5L968.5,463.3L967.6,466.4L965.1,468.8L964.6,467.8L961.6,469.6L960.8,471.7L960.4,475.3L962.1,475.2L964.6,471.7L967.4,471.7L964.7,475.0L955.2,508.0L953.5,507.4L954.0,503.1L952.4,500.4L947.9,497.9L950.3,490.4L948.2,486.4L941.2,498.5L934.2,499.5L928.5,512.5L924.0,516.9L924.1,518.9L918.6,514.5L914.7,516.5Z"},{"id":"MX-QUE","n":"Querétaro","d":"M607.4,405.9L605.8,409.9L600.7,411.5L599.2,410.6L597.1,412.4L595.9,418.5L592.0,423.7L592.8,426.2L583.2,430.6L581.9,438.7L580.4,441.4L578.2,441.2L579.3,444.5L576.4,447.3L572.9,446.9L561.7,432.9L561.7,429.5L559.5,425.5L561.2,419.0L572.1,418.2L573.2,416.4L574.2,417.0L577.7,409.0L579.6,408.3L581.8,410.5L585.6,408.2L586.6,404.9L583.5,404.1L585.0,399.2L583.7,397.9L585.6,397.4L585.5,396.2L588.2,396.9L591.2,400.9L596.4,400.8L597.8,397.4L600.3,397.2L607.4,405.9Z"},{"id":"MX-PUE","n":"Puebla","d":"M681.7,500.5L678.3,505.9L671.0,509.9L664.7,509.2L659.2,515.8L653.4,506.8L655.1,504.6L654.2,503.0L650.3,504.1L647.8,509.5L651.2,512.5L649.1,515.1L644.1,512.9L638.0,513.6L632.0,517.5L628.0,514.0L622.7,515.3L622.5,514.0L617.3,511.8L618.4,509.9L614.4,509.8L609.5,504.8L609.9,502.8L616.2,497.2L620.2,500.4L620.9,499.5L619.3,491.0L622.8,480.9L621.6,466.4L623.9,466.5L631.4,474.5L636.5,477.3L641.3,473.8L644.8,474.9L648.1,471.0L653.5,470.0L653.8,468.6L649.9,464.6L646.1,464.3L646.4,462.4L640.5,456.8L637.2,459.3L634.6,458.8L633.7,454.3L636.7,443.1L636.1,440.3L633.5,440.9L632.6,439.2L637.1,436.9L641.8,432.0L642.1,426.1L645.3,420.6L649.3,420.7L649.3,423.0L647.7,423.9L650.0,424.8L649.7,426.9L654.1,430.8L652.3,433.9L650.3,432.8L648.8,433.7L649.4,441.7L652.8,442.1L654.6,444.6L659.2,439.6L667.9,442.7L660.0,461.4L661.4,467.3L671.3,471.2L672.0,473.5L665.2,474.3L665.7,482.3L663.2,486.7L663.7,491.8L669.4,494.1L671.5,499.0L676.2,496.8L679.4,497.8L681.7,500.5Z"},{"id":"MX-OAX","n":"Oaxaca","d":"M767.9,542.2L765.6,551.5L762.1,554.5L759.2,562.6L760.6,567.4L760.2,572.4L755.6,572.9L752.4,570.0L750.2,571.8L751.6,573.7L757.0,574.1L760.6,577.8L751.1,574.1L742.1,572.7L745.9,568.8L743.0,567.7L739.4,570.6L738.6,570.0L740.0,568.8L737.2,565.5L732.0,568.8L729.8,572.0L738.5,572.6L728.4,573.4L724.3,574.9L719.5,580.2L703.0,585.1L694.4,589.7L684.6,590.5L675.2,587.9L664.3,582.0L646.8,580.3L633.0,572.0L622.5,569.2L628.2,564.8L628.8,562.3L633.9,557.8L634.1,556.1L637.9,553.8L639.1,550.2L636.3,546.6L635.9,542.7L632.4,541.1L633.7,537.5L633.0,531.8L629.6,524.2L632.0,517.5L638.0,513.6L644.1,512.9L649.1,515.1L651.2,512.5L647.8,509.5L650.3,504.1L654.2,503.0L655.1,504.6L653.4,506.8L659.2,515.8L664.7,509.2L671.0,509.9L678.3,505.9L683.2,497.8L683.8,493.9L686.5,495.7L685.8,497.3L687.3,501.9L693.1,504.3L696.3,508.4L698.6,507.3L705.7,509.0L706.7,515.3L703.5,520.7L706.4,528.6L714.0,528.3L724.3,523.2L726.0,524.3L723.6,527.4L732.1,536.4L732.4,540.0L767.9,542.2Z"},{"id":"MX-NLE","n":"Nuevo León","d":"M586.1,188.3L583.7,190.8L580.3,191.8L579.4,195.0L584.9,195.7L583.7,198.7L585.3,199.8L587.3,210.0L584.2,214.7L584.4,216.1L588.4,217.8L587.6,223.4L590.5,224.5L591.5,226.9L593.8,227.1L597.6,235.4L599.4,235.3L600.8,238.5L603.3,237.8L604.1,241.1L603.0,241.5L608.5,243.5L610.8,247.1L621.6,245.8L622.8,248.9L622.7,261.5L626.9,263.6L621.0,270.5L613.4,273.1L611.2,277.0L607.8,276.7L606.4,275.2L602.7,278.7L604.3,281.9L600.9,287.0L599.6,287.6L598.6,285.8L595.3,289.7L593.2,289.6L591.5,292.2L585.5,295.5L584.7,298.1L587.2,298.4L588.8,301.6L587.7,310.1L594.3,321.1L591.5,320.6L588.4,323.8L584.4,323.1L581.5,324.7L578.5,331.6L578.7,337.3L574.9,336.9L574.0,340.3L569.2,339.4L566.3,342.9L563.3,340.9L562.2,338.1L561.6,316.1L555.0,304.4L556.5,302.5L556.3,299.8L553.2,299.4L551.1,296.5L553.0,291.9L550.4,284.2L553.9,283.1L552.6,276.8L556.6,271.0L559.9,270.9L561.6,272.8L568.2,273.9L569.7,271.1L567.5,268.5L563.1,267.8L563.7,266.4L558.6,263.0L557.5,258.3L552.4,257.2L551.1,251.9L551.9,247.5L549.0,246.0L547.7,242.1L538.5,233.1L544.1,224.5L555.6,222.0L558.4,218.3L558.9,209.2L555.6,207.2L554.0,211.2L550.5,208.6L550.1,204.4L553.9,199.4L561.5,198.3L561.3,195.4L564.5,188.3L570.4,187.2L577.3,188.3L583.4,184.6L586.1,188.3Z"},{"id":"MX-NAY","n":"Nayarit","d":"M401.1,363.2L403.2,376.0L399.2,365.3L401.5,366.3L401.1,363.2ZM384.1,404.5L383.3,406.0L382.8,405.1L384.1,404.5ZM371.0,392.5L374.2,393.4L375.3,396.7L371.7,395.6L371.0,392.5ZM442.1,368.8L444.0,374.6L442.5,380.7L443.1,384.5L445.1,383.8L448.6,386.0L449.8,391.4L455.4,392.1L459.6,400.9L458.6,407.2L451.3,410.8L446.3,411.1L444.4,421.8L442.9,422.8L445.5,429.3L435.7,419.3L428.5,415.6L423.0,418.9L418.1,419.3L413.2,425.9L411.6,423.7L410.0,424.6L406.2,423.3L412.6,414.5L414.8,414.1L414.8,404.2L416.5,400.9L415.3,398.3L408.4,394.7L402.2,381.8L403.3,376.1L407.4,380.0L407.8,378.1L403.3,375.1L401.2,363.1L408.3,365.2L409.0,364.0L405.8,356.1L408.3,352.2L409.0,348.0L410.0,347.2L412.7,350.5L416.6,348.5L418.5,350.6L422.4,351.4L423.5,354.7L425.6,355.1L425.0,357.7L420.8,361.0L423.5,366.7L427.0,362.5L437.4,372.2L442.1,368.8ZM377.7,399.1L380.1,400.3L379.3,401.8L376.0,400.0L377.7,399.1Z"},{"id":"MX-MOR","n":"Morelos","d":"M612.9,479.5L615.3,482.5L618.4,483.7L622.8,480.9L619.4,489.7L620.2,500.4L616.2,497.2L609.6,503.2L606.7,500.3L599.9,499.4L597.4,496.1L594.1,495.4L594.6,491.7L602.0,479.7L605.1,480.9L607.7,479.4L608.8,480.4L612.9,479.5Z"},{"id":"MX-MIC","n":"Michoacán","d":"M566.4,439.1L573.7,447.4L574.7,452.3L572.4,457.6L569.1,457.9L571.1,467.6L565.3,479.4L561.8,481.6L556.3,488.9L555.0,486.9L553.1,489.3L555.0,498.5L558.5,503.2L557.5,504.5L550.4,500.3L547.8,501.5L546.3,498.4L537.7,497.1L530.5,498.8L527.0,495.5L523.0,495.2L521.5,496.8L518.8,497.0L519.1,505.8L510.1,509.3L511.2,516.7L509.6,517.4L473.2,506.0L468.5,503.1L466.3,498.0L462.8,495.2L461.3,491.8L464.4,488.2L464.4,485.9L475.9,480.9L478.5,483.1L488.2,475.0L492.8,474.8L496.7,468.8L495.9,466.0L491.7,466.1L492.5,462.9L490.1,457.6L491.7,455.7L491.0,452.9L481.5,450.2L482.7,445.4L484.3,445.3L484.6,443.9L489.5,446.0L500.2,438.6L510.0,436.7L515.6,437.3L516.7,442.0L518.3,442.7L524.2,442.5L526.7,439.0L531.9,438.4L534.9,441.6L532.8,441.2L534.0,448.1L539.4,449.3L540.9,448.6L540.6,447.3L545.8,446.7L546.4,450.3L556.7,451.4L560.3,449.6L561.3,451.6L562.8,448.8L566.9,447.0L566.4,439.1Z"},{"id":"MX-MEX","n":"México","d":"M618.8,463.7L621.6,466.4L622.6,475.4L622.8,480.9L619.6,483.0L618.4,483.7L614.7,481.8L612.9,479.5L612.5,473.8L605.5,464.4L602.5,469.6L598.6,473.1L602.0,479.7L594.3,492.9L592.2,493.4L587.6,491.3L588.1,493.4L585.9,493.8L585.4,495.8L576.3,497.0L576.7,499.5L573.8,500.1L571.2,502.9L569.4,503.2L567.5,499.7L563.1,498.8L565.5,495.6L562.8,491.2L565.0,483.5L564.6,479.8L571.1,467.6L569.1,457.9L572.7,456.9L574.7,452.3L573.7,447.4L576.9,447.0L579.3,444.5L578.5,440.8L580.4,441.4L581.9,438.7L586.6,442.3L592.4,443.2L597.2,453.3L597.4,457.9L599.0,456.8L599.2,454.1L601.9,455.3L602.7,454.4L603.4,449.7L612.3,446.7L611.5,453.7L609.1,455.1L610.2,458.5L613.4,455.4L620.6,454.6L618.8,463.7Z"},{"id":"MX-JAL","n":"Jalisco","d":"M491.5,392.8L494.0,391.4L499.2,391.9L504.1,394.9L509.4,393.5L513.4,388.5L518.8,386.0L516.3,383.4L516.3,380.6L520.7,381.7L529.6,387.5L528.1,389.1L529.0,390.2L525.8,399.6L526.9,403.1L526.1,404.8L523.7,405.4L521.8,410.5L511.5,423.2L516.2,428.9L513.5,436.7L500.2,438.6L489.5,446.0L484.6,443.9L484.3,445.3L482.7,445.4L482.1,451.2L486.2,451.0L491.0,452.9L491.7,455.7L490.1,457.6L492.5,462.9L491.7,466.1L496.7,466.9L496.7,468.8L492.8,474.8L488.2,475.0L478.5,483.1L475.9,480.9L473.2,483.1L469.2,483.2L468.1,478.8L469.3,471.0L466.7,468.9L465.4,463.4L458.3,468.5L452.5,468.3L448.6,471.2L440.3,471.7L433.6,475.4L428.2,474.1L428.7,472.1L423.7,471.2L421.4,469.0L419.6,463.4L414.1,459.4L407.7,450.2L405.3,445.6L405.1,441.4L400.8,435.3L403.3,433.3L412.4,431.8L415.1,428.5L413.2,425.9L418.1,419.3L423.0,418.9L428.5,415.6L435.7,419.3L445.5,429.3L442.9,422.8L444.4,421.8L446.3,411.1L451.3,410.8L459.1,406.2L459.3,399.1L455.4,392.1L449.8,391.4L448.6,386.0L445.1,383.8L443.1,384.5L442.7,383.3L443.8,374.0L445.2,372.5L446.8,372.9L447.3,369.1L451.8,368.2L450.8,372.8L454.3,369.9L452.1,362.3L456.9,359.9L460.3,361.2L454.9,371.0L454.8,375.1L457.0,377.7L458.2,376.1L458.2,367.3L463.3,365.8L466.8,368.1L467.4,371.9L462.8,379.6L463.4,381.0L470.2,380.4L474.3,375.9L473.2,372.2L475.5,371.3L478.2,371.5L477.8,374.5L481.7,375.7L479.3,383.7L467.0,391.6L466.8,396.9L462.5,399.8L463.6,402.9L466.8,403.2L467.1,405.2L460.9,409.5L464.0,410.2L465.9,413.4L473.4,415.7L479.8,414.7L481.8,413.6L482.9,410.4L486.5,410.5L493.8,405.1L495.6,400.1L492.2,397.9L491.5,392.8Z"},{"id":"MX-HID","n":"Hidalgo","d":"M623.1,402.0L624.5,403.2L624.2,406.5L626.4,408.6L633.2,409.2L636.3,413.9L634.0,416.5L633.6,421.4L629.6,420.0L625.4,424.4L624.0,433.2L625.4,436.4L627.1,437.5L639.9,427.1L641.7,428.2L641.8,432.0L637.1,436.9L632.6,439.2L633.5,440.9L636.1,440.3L636.7,443.1L633.8,452.9L634.6,458.8L631.7,458.2L628.8,461.5L618.8,463.7L620.6,454.6L613.4,455.4L610.2,458.5L609.1,455.1L611.5,453.7L612.3,446.7L603.4,449.7L602.7,454.4L601.9,455.3L599.2,454.1L599.0,456.8L597.4,457.9L597.7,455.0L594.4,449.4L595.2,448.1L593.4,444.2L586.6,442.3L581.9,438.7L583.2,430.6L592.8,426.2L592.0,423.7L595.9,418.5L597.1,412.4L599.2,410.6L600.7,411.5L605.8,409.9L607.4,405.9L609.3,405.2L614.6,409.3L616.0,407.2L617.4,408.0L621.0,402.0L623.1,402.0Z"},{"id":"MX-GRO","n":"Guerrero","d":"M594.3,492.9L594.6,495.8L597.4,496.1L599.9,499.4L606.7,500.3L614.4,509.8L618.4,509.9L617.3,511.8L622.5,514.0L622.7,515.3L628.0,514.0L632.0,517.5L629.6,524.2L633.0,531.8L633.7,537.5L632.4,541.1L635.9,542.7L636.3,546.6L639.1,550.2L637.9,553.8L634.1,556.1L633.9,557.8L628.8,562.3L628.2,564.8L622.5,569.2L615.7,561.6L611.6,562.2L598.4,558.3L587.6,556.7L577.8,550.0L544.8,538.2L540.3,533.3L532.6,530.0L531.7,527.6L526.6,525.4L521.7,518.4L514.2,514.9L511.6,516.2L510.1,514.9L510.1,509.3L519.1,505.8L518.8,497.0L521.5,496.8L523.0,495.2L527.0,495.5L530.5,498.8L537.7,497.1L546.3,498.4L547.8,501.5L550.4,500.3L557.5,504.5L558.5,503.2L555.0,498.5L553.1,489.3L555.0,486.9L556.3,488.9L564.6,479.8L565.0,483.5L562.8,491.2L565.5,495.6L563.1,498.8L567.5,499.7L569.4,503.2L576.7,499.5L575.8,497.8L577.5,496.4L585.4,495.8L585.9,493.8L588.1,493.4L587.6,491.3L592.2,493.4L594.3,492.9Z"},{"id":"MX-GUA","n":"Guanajuato","d":"M584.4,398.6L584.9,401.8L583.5,404.1L586.6,404.9L585.6,408.2L581.8,410.5L579.6,408.3L577.7,409.0L574.2,417.0L573.2,416.4L572.1,418.2L561.2,419.0L560.3,420.8L559.7,426.5L561.7,429.5L561.7,432.9L566.4,439.1L566.1,445.3L567.1,446.2L565.4,448.5L562.8,448.8L561.3,451.6L560.3,449.6L556.7,451.4L546.4,450.3L545.8,446.7L540.6,447.3L540.9,448.6L539.4,449.3L534.0,448.1L532.8,441.2L534.9,441.6L531.9,438.4L526.7,439.0L524.2,442.5L518.3,442.7L516.7,442.0L516.3,437.9L513.5,436.7L516.2,428.9L511.5,423.2L521.8,410.5L523.7,405.4L526.1,404.8L526.9,403.1L525.8,399.6L529.0,390.2L528.1,389.1L529.6,387.5L547.0,391.5L556.6,397.9L561.9,397.1L563.8,392.5L568.6,394.1L575.6,400.0L578.3,399.1L581.1,400.2L584.4,398.6Z"},{"id":"MX-DUR","n":"Durango","d":"M457.5,220.5L463.6,223.7L467.5,227.9L469.2,232.8L468.9,238.2L470.9,243.2L472.1,254.1L467.6,261.6L471.0,265.6L466.5,267.8L467.3,271.8L473.2,279.0L474.7,284.0L480.5,287.4L487.4,289.1L487.8,283.6L492.3,279.8L494.2,284.3L497.0,286.4L496.0,292.5L497.5,293.0L498.8,298.0L497.6,298.7L498.1,300.5L488.4,300.9L487.5,302.1L482.9,300.1L478.8,301.0L470.5,300.0L460.1,311.6L457.1,312.5L458.9,328.2L452.5,334.8L450.8,344.3L448.4,348.2L449.1,360.6L444.8,363.1L442.1,368.8L437.4,372.2L427.0,362.5L424.3,366.8L422.7,365.7L420.8,361.0L425.7,356.6L422.4,351.4L418.5,350.6L416.6,348.5L412.7,350.5L407.4,344.5L403.1,345.0L398.2,328.4L393.6,322.4L387.6,304.9L383.3,301.7L378.3,300.2L374.0,304.2L369.6,304.7L363.5,289.7L361.8,289.4L360.7,286.1L355.7,285.2L356.1,283.4L351.9,276.6L354.3,263.7L352.8,262.1L356.5,258.3L355.7,256.0L357.9,255.0L360.3,257.5L362.3,257.2L367.5,260.3L372.9,255.2L375.6,250.9L373.6,246.6L376.9,241.3L376.4,238.6L378.2,238.3L378.2,236.7L382.1,233.8L380.6,231.2L383.5,220.2L385.7,219.5L386.9,217.2L393.0,220.2L396.1,224.3L404.9,227.6L406.0,229.6L413.1,230.0L416.4,227.1L422.0,228.0L427.8,232.2L432.6,231.0L435.0,224.5L441.4,221.4L441.5,220.2L439.0,219.2L440.2,217.9L446.4,220.9L453.3,219.3L457.5,220.5Z"},{"id":"MX-CMX","n":"Ciudad de México","d":"M612.9,479.5L608.8,480.4L607.7,479.4L605.1,480.9L602.0,479.7L598.7,474.3L605.5,464.4L612.5,473.8L612.9,479.5Z"},{"id":"MX-COL","n":"Colima","d":"M469.2,483.2L466.1,486.0L464.4,485.9L464.4,488.2L461.3,491.8L454.4,486.3L443.0,481.2L443.9,479.3L442.0,477.9L439.7,479.1L431.6,475.8L440.3,471.7L448.6,471.2L452.5,468.3L458.3,468.5L465.4,463.4L466.7,468.9L469.3,471.0L468.1,478.8L469.2,483.2Z"},{"id":"MX-COA","n":"Coahuila","d":"M582.5,184.9L577.3,188.3L565.9,187.5L561.7,194.4L561.5,198.3L552.4,200.7L550.1,204.4L550.5,208.6L554.0,211.2L555.6,207.2L558.9,209.2L558.4,218.3L555.6,222.0L544.1,224.5L538.7,232.0L538.5,233.1L547.7,242.1L549.0,246.0L552.3,248.3L551.1,251.9L552.4,257.2L557.5,258.3L558.6,263.0L563.7,266.4L563.1,267.8L567.5,268.5L569.7,271.1L568.2,273.9L561.6,272.8L557.8,270.7L554.7,272.8L552.6,276.8L553.9,283.1L550.4,284.2L553.0,291.9L551.8,296.0L549.2,295.4L546.2,297.2L543.6,296.2L538.0,288.9L526.9,290.1L526.1,285.7L522.8,285.8L517.7,279.9L510.5,276.4L500.9,275.7L493.1,277.1L492.3,279.8L487.8,283.6L487.8,288.4L486.6,289.3L474.7,284.0L473.2,279.0L467.3,271.8L466.5,267.8L471.0,265.6L467.6,261.6L472.1,254.1L468.2,229.5L462.1,222.2L458.4,221.3L453.5,215.8L453.2,212.9L458.2,210.8L458.7,208.8L455.8,207.0L455.2,195.0L452.4,186.4L453.8,184.9L452.6,179.2L455.3,178.1L453.4,174.1L456.3,174.5L460.8,164.3L459.7,162.6L463.2,156.5L467.0,154.3L469.1,149.3L471.0,149.3L472.1,147.3L469.7,145.6L472.5,140.4L480.8,141.9L484.5,135.0L488.6,133.4L487.3,132.0L488.1,128.8L490.1,127.0L490.4,122.7L494.2,115.6L502.8,114.0L505.6,110.0L511.9,113.1L521.0,112.4L526.4,114.4L532.3,113.2L535.2,118.0L537.2,118.5L536.9,120.4L538.8,119.0L538.8,122.8L544.6,124.9L546.2,128.1L552.8,132.6L553.5,135.2L556.4,137.4L557.4,143.2L560.9,148.2L562.1,153.2L567.1,158.9L566.2,159.6L568.6,166.9L575.0,171.4L579.5,177.2L582.5,184.9Z"},{"id":"MX-CHH","n":"Chihuahua","d":"M472.5,140.4L469.7,145.6L472.1,147.3L471.0,149.3L469.1,149.3L467.0,154.3L463.2,156.5L460.4,161.2L460.8,164.3L456.3,174.5L453.4,174.1L455.3,178.1L452.6,179.2L453.8,184.9L452.4,186.4L455.2,195.0L455.8,207.0L458.7,208.8L458.2,210.8L453.2,212.9L453.5,215.8L457.5,220.5L453.3,219.3L446.4,220.9L440.2,217.9L439.0,219.2L441.5,220.2L441.4,221.4L435.0,224.5L432.6,231.0L427.8,232.2L422.0,228.0L416.4,227.1L413.1,230.0L406.0,229.6L404.9,227.6L396.1,224.3L393.0,220.2L386.9,217.2L385.7,219.5L383.5,220.2L380.6,231.2L382.1,233.8L378.2,236.7L378.2,238.3L376.4,238.6L376.9,241.3L373.6,246.6L375.6,250.9L372.9,255.2L367.5,260.3L362.3,257.2L360.3,257.5L358.6,255.0L355.3,256.8L348.3,243.2L336.7,240.5L335.2,234.7L329.5,224.9L329.6,217.2L328.3,214.3L326.0,214.3L325.9,210.7L314.3,210.8L309.9,208.5L311.7,197.1L307.7,187.6L303.6,184.7L304.0,179.5L298.6,174.0L299.4,170.6L297.2,168.5L298.5,166.8L303.4,165.1L307.2,166.9L313.4,162.3L308.7,159.0L308.2,152.9L309.9,148.0L309.8,140.3L311.6,138.7L311.7,135.3L313.8,133.9L314.7,121.2L313.7,112.8L311.8,111.0L314.1,100.3L312.3,98.6L313.5,94.5L309.8,83.5L310.5,80.5L309.1,76.3L305.7,73.0L307.7,72.1L308.3,68.3L305.2,57.5L322.7,57.4L322.7,41.0L374.9,41.0L378.1,42.2L384.9,52.7L392.7,56.3L398.3,63.3L403.7,66.6L409.9,74.8L418.8,78.7L425.5,85.2L426.8,91.7L431.4,97.0L432.4,109.1L436.8,117.5L441.5,121.9L445.1,122.9L451.8,129.6L460.4,132.4L464.3,135.7L467.2,135.6L472.5,140.4Z"},{"id":"MX-CHP","n":"Chiapas","d":"M760.6,577.8L761.3,576.5L762.2,577.9L760.6,577.8ZM760.2,572.4L760.6,567.4L759.1,563.7L761.5,555.8L765.6,551.5L768.4,541.3L775.5,536.7L779.2,532.2L779.3,530.1L783.3,525.4L784.2,516.5L786.9,515.4L792.3,519.0L795.2,518.8L793.4,524.4L796.4,528.3L796.0,530.6L799.7,531.4L802.6,535.5L815.9,525.3L820.0,523.8L820.6,519.7L825.2,520.3L826.1,518.0L828.4,519.5L832.1,518.9L833.5,523.1L836.7,524.6L838.3,528.8L837.3,532.1L842.7,533.6L846.0,537.3L843.5,539.0L844.2,540.2L848.6,541.5L855.3,550.5L866.1,556.1L868.3,562.9L875.4,565.9L876.0,567.4L874.1,572.9L874.5,577.3L834.6,576.9L819.4,603.2L824.2,609.5L821.5,612.3L820.4,617.1L821.5,622.4L819.1,626.7L799.8,606.1L778.2,587.4L765.9,579.8L768.3,579.7L768.0,577.9L761.3,575.5L760.2,572.4Z"},{"id":"MX-CAM","n":"Campeche","d":"M840.7,489.1L840.4,490.8L838.4,490.4L836.4,492.9L830.7,493.3L840.7,489.1ZM876.3,422.3L876.1,431.5L881.2,432.1L882.4,434.6L885.5,435.6L888.1,433.7L894.7,445.3L899.5,448.0L904.8,455.5L907.0,461.4L918.3,472.7L918.5,481.4L916.6,482.8L915.9,492.3L917.9,498.6L918.2,507.1L914.4,513.4L914.7,520.6L857.7,520.6L857.7,518.6L842.5,512.2L839.0,512.4L838.7,517.2L835.0,518.1L828.8,516.1L823.4,511.4L819.8,505.0L820.2,503.0L813.0,498.0L811.5,493.3L825.7,491.7L830.6,494.6L829.8,496.1L827.9,494.4L826.2,495.0L826.3,497.7L828.1,496.1L830.7,498.1L839.2,500.1L847.5,496.3L849.8,490.6L848.1,488.5L845.6,488.7L847.1,484.8L841.7,488.7L865.2,471.0L866.2,459.6L874.2,450.2L872.9,446.8L872.6,432.3L876.3,422.3Z"},{"id":"MX-BCS","n":"Baja California Sur","d":"M119.9,502.3L121.1,503.3L119.5,503.5L119.9,502.3ZM200.9,271.4L199.0,282.1L199.8,283.7L198.2,285.9L203.1,296.5L199.5,292.6L200.7,291.4L199.6,288.8L195.6,287.9L200.9,271.4ZM243.0,256.2L243.6,260.1L242.1,258.0L243.0,256.2ZM138.2,178.3L179.2,178.4L186.5,188.9L193.8,192.3L198.3,204.1L206.4,208.2L204.5,212.5L208.9,217.4L207.8,221.5L211.8,226.8L213.1,227.7L215.0,226.0L210.7,221.5L209.6,215.8L210.5,215.2L218.6,222.2L218.8,227.2L222.2,228.3L221.4,231.9L224.0,235.2L226.1,243.9L224.9,247.7L226.5,254.2L229.5,256.6L232.3,262.6L235.5,263.0L238.9,275.7L243.5,280.3L246.6,287.3L244.1,293.5L245.9,302.6L250.0,307.8L256.9,308.8L253.9,309.3L254.1,311.1L256.2,311.0L257.7,308.7L256.6,304.8L257.9,302.9L259.8,303.1L261.6,306.3L266.9,309.5L267.5,313.3L272.5,312.8L272.4,317.7L276.4,321.6L276.4,326.2L283.6,330.1L285.0,333.7L284.6,340.6L281.5,345.0L276.0,347.6L271.6,352.2L268.2,353.1L266.5,351.9L264.4,349.1L262.0,338.2L256.6,329.5L248.9,325.4L234.5,311.0L218.3,301.1L215.7,295.5L210.5,297.2L209.8,292.8L206.7,288.9L206.0,289.8L201.7,288.3L201.4,281.3L199.7,287.2L199.2,282.1L201.2,279.4L200.3,276.0L202.6,271.2L203.1,259.9L199.0,246.7L195.4,243.8L192.3,237.8L189.5,238.3L183.9,235.4L171.8,225.4L168.7,218.7L168.3,220.0L166.4,219.1L169.3,217.0L168.8,211.9L165.1,220.3L160.6,218.3L160.9,217.5L159.2,217.7L156.9,221.4L155.0,221.6L151.1,218.6L149.1,214.0L146.9,212.4L142.8,212.6L138.5,207.5L129.3,205.4L127.7,203.6L126.6,196.7L120.0,193.4L115.6,187.2L114.8,188.4L111.5,186.5L109.2,182.0L110.2,181.5L127.2,184.6L131.9,183.2L132.7,180.9L133.7,181.3L134.0,185.9L140.1,190.2L141.4,187.8L144.0,188.7L147.1,192.5L147.8,191.1L145.8,189.1L146.3,183.4L144.2,181.6L143.1,185.4L139.2,186.9L137.1,185.4L138.2,178.3ZM255.9,296.7L258.1,298.6L256.9,301.2L255.0,298.5L255.9,296.7ZM166.8,221.0L169.4,223.3L165.7,222.0L166.8,221.0ZM205.3,297.0L209.2,297.2L212.8,299.9L214.0,303.9L205.3,297.0ZM269.2,302.1L272.8,310.0L270.4,308.6L269.2,302.1ZM234.1,244.0L233.6,247.3L232.2,247.1L228.9,252.5L230.6,244.9L234.1,244.0ZM245.2,277.1L249.3,280.4L250.0,285.1L246.7,282.5L245.2,277.1ZM236.4,486.2L238.5,488.4L237.5,491.1L234.5,488.3L236.4,486.2Z"},{"id":"MX-BCN","n":"Baja California","d":"M156.6,121.6L161.7,124.9L163.0,127.7L162.4,130.2L168.3,131.0L170.3,141.7L158.5,131.2L155.6,126.7L156.6,121.6ZM105.1,163.3L106.9,171.7L106.1,175.5L104.6,175.6L103.1,173.5L100.6,173.8L104.1,169.1L103.6,166.2L105.1,163.3ZM139.0,178.3L134.7,180.6L134.5,178.7L138.4,174.0L139.0,178.3ZM187.7,150.8L187.8,152.8L186.4,152.9L186.0,150.9L187.7,150.8ZM117.6,14.9L114.4,15.0L110.8,22.4L112.4,25.4L111.0,34.9L118.0,39.7L118.6,46.9L116.3,51.7L115.2,63.6L117.7,67.9L117.0,69.6L120.5,71.8L121.1,82.7L123.3,87.8L122.1,98.7L126.3,106.7L130.2,109.9L130.7,113.4L132.3,114.7L134.1,113.7L136.4,114.7L154.1,131.2L154.0,134.8L157.2,139.2L157.6,145.1L160.5,143.0L162.3,144.5L162.9,148.3L165.9,146.9L167.2,147.7L170.7,158.8L173.9,160.6L176.9,159.9L178.7,161.8L177.9,166.4L180.3,169.9L181.1,180.9L179.2,178.4L139.9,178.3L139.7,175.3L140.8,176.9L141.6,175.8L139.3,172.5L141.2,168.7L139.0,167.6L141.4,161.1L140.7,158.5L137.9,156.5L137.2,153.5L134.5,153.3L132.0,150.6L129.8,145.5L124.3,142.2L123.1,137.8L121.0,137.7L113.3,128.4L105.9,126.1L104.0,122.9L96.1,119.3L90.1,114.0L90.1,109.5L86.8,106.7L86.9,95.6L82.5,89.6L81.4,90.2L79.2,88.6L79.1,77.5L72.4,70.8L70.5,71.1L71.1,63.9L69.4,60.5L59.3,48.9L60.5,48.2L60.6,45.5L57.7,42.4L60.2,43.4L61.8,39.0L57.6,36.7L56.5,33.9L54.2,33.5L52.2,25.2L48.5,22.7L45.8,13.6L120.5,6.7L117.7,10.5L117.6,14.9ZM10.5,134.5L9.9,137.4L11.5,138.9L11.8,142.5L10.0,145.4L7.3,136.0L10.5,134.5Z"},{"id":"MX-AGU","n":"Aguascalientes","d":"M491.5,392.8L488.5,388.5L495.3,375.1L503.2,371.3L506.0,368.3L508.6,371.7L514.2,375.0L516.3,383.4L518.8,386.0L513.4,388.5L510.3,392.9L504.1,394.9L499.2,391.9L494.0,391.4L491.5,392.8Z"}],"stores":[{"n":"CDMX Centro","a":"Uruguay 117–127, Col. Centro, CDMX","s":"Ciudad de México","sid":"MX-CMX","z":"vm","f":"c","h":"Lun–dom 10:00–19:30","x":604.46,"y":467.7,"src":"loc"},{"n":"Coyoacán","a":"Miguel Ángel de Quevedo 513, Romero de Terreros, CDMX","s":"Ciudad de México","sid":"MX-CMX","z":"vm","f":"p","h":"Lun–dom 10:00–19:30","x":603.42,"y":470.5,"src":"loc"},{"n":"Del Valle","a":"Félix Cuevas 112, Col. del Valle, CDMX","s":"Ciudad de México","sid":"MX-CMX","z":"vm","f":"p","h":"Lun–dom 10:00–19:30","x":603.35,"y":469.59,"src":"loc"},{"n":"Lomas","a":"Prado Norte 310, Lomas de Chapultepec, CDMX","s":"Ciudad de México","sid":"MX-CMX","z":"vm","f":"p","h":"Lun–dom 10:00–19:30","x":602.11,"y":467.75,"src":"loc"},{"n":"Pedregal","a":"Av. San Jerónimo 398, Jardines del Pedregal, CDMX","s":"Ciudad de México","sid":"MX-CMX","z":"vm","f":"p","h":"Lun–dom 10:00–19:30","x":602.3,"y":471.08,"src":"loc"},{"n":"Polanco","a":"Mariano Escobedo 151, Col. Anáhuac, CDMX · mismo domicilio que el corporativo","s":"Ciudad de México","sid":"MX-CMX","z":"vm","f":"p","h":"Lun–dom 10:00–19:30","x":603.17,"y":467.45,"src":"loc"},{"n":"Santa Fe","a":"Juan Salvador Agraz 15, Santa Fe, CDMX","s":"Ciudad de México","sid":"MX-CMX","z":"vm","f":"p","h":"Lun–dom 10:00–19:30","x":600.31,"y":469.99,"src":"loc"},{"n":"Villa Coapa","a":"Canal de Miramontes 2053, Col. Girasoles, CDMX","s":"Ciudad de México","sid":"MX-CMX","z":"vm","f":"p","h":"Lun–dom 10:00–19:30","x":604.41,"y":472.03,"src":"loc"},{"n":"Xochimilco","a":"Guadalupe I. Ramírez 293, San Marcos Norte, CDMX","s":"Ciudad de México","sid":"MX-CMX","z":"vm","f":"p","h":"Lun–dom 10:00–19:30","x":605.43,"y":473.21,"src":"loc"},{"n":"Coacalco","a":"Vía José López Portillo 49, Col. San Francisco, Coacalco","s":"Estado de México","sid":"MX-MEX","z":"vm","f":"p","h":"Lun–dom 10:00–19:30","x":605.47,"y":461.13,"src":"loc"},{"n":"Interlomas","a":"Vialidad de la Barranca 4, Huixquilucan","s":"Estado de México","sid":"MX-MEX","z":"vm","f":"p","h":"Lun–dom 10:00–19:30","x":600.06,"y":468.67,"src":"loc"},{"n":"Metepec","a":"Blvd. Toluca–Metepec 201 Norte, Metepec","s":"Estado de México","sid":"MX-MEX","z":"vm","f":"p","h":"Lun–dom 10:00–19:30","x":589.91,"y":473.02,"src":"loc"},{"n":"Satélite","a":"Circuito Cirujanos 5, Ciudad Satélite, Naucalpan","s":"Estado de México","sid":"MX-MEX","z":"vm","f":"p","h":"Lun–dom 10:00–19:30","x":601.34,"y":465.15,"src":"loc"},{"n":"Tlalnepantla","a":"Av. Gustavo Baz 3836, Tlalnepantla","s":"Estado de México","sid":"MX-MEX","z":"vm","f":"p","h":"Lun–dom 10:00–19:30","x":602.52,"y":464.23,"src":"loc"},{"n":"Toluca Centro","a":"Ignacio Allende 5 Sur 101, Col. Centro, Toluca","s":"Estado de México","sid":"MX-MEX","z":"vm","f":"c","h":"Lun–dom 10:00–19:30","x":588.32,"y":472.29,"src":"loc"},{"n":"Monterrey Centro","a":"Av. Benito Juárez Sur 399, Col. Centro, Monterrey","s":"Nuevo León","sid":"MX-NLE","z":"nn","f":"c","h":"Lun–sáb 10:00–20:00 · dom 10:00–18:00","x":568.01,"y":257.71,"src":"loc"},{"n":"San Jerónimo","a":"Av. San Jerónimo 938, Monterrey","s":"Nuevo León","sid":"MX-NLE","z":"nn","f":"p","h":"Lun–sáb 10:00–20:00 · dom 11:00–19:00","x":566.3,"y":257.37,"src":"loc"},{"n":"Citadel","a":"Rómulo Garza 410, San Nicolás de los Garza","s":"Nuevo León","sid":"MX-NLE","z":"nn","f":"p","h":"Lun–sáb 10:00–20:00 · dom 11:00–19:00","x":568.32,"y":255.65,"src":"loc"},{"n":"Garza Sada","a":"Av. Eugenio Garza Sada, Col. Contry, Monterrey","s":"Nuevo León","sid":"MX-NLE","z":"nn","f":"p","h":"Lun–sáb 10:00–20:00 · dom 10:00–19:00","x":569.01,"y":259.26,"src":"loc"},{"n":"Guadalajara Centro","a":"Hidalgo 520, Col. Centro, Guadalajara","s":"Jalisco","sid":"MX-JAL","z":"bo","f":"c","h":"Lun–sáb 10:00–19:45 · dom 10:00–17:00","x":473.51,"y":426.46,"src":"loc"},{"n":"Patria","a":"Labna 1437, Plaza Ciudadela, Zapopan","s":"Jalisco","sid":"MX-JAL","z":"bo","f":"p","h":"Lun–sáb 10:00–19:45 · dom 11:00–18:45","x":471.86,"y":427.59,"src":"loc"},{"n":"Zapopan","a":"Av. Mariano Otero 3396, Rinconada del Sol, Zapopan","s":"Jalisco","sid":"MX-JAL","z":"bo","f":"p","h":"Lun–sáb 10:00–19:45 · dom 11:00–18:45","x":471.21,"y":427.92,"src":"loc"},{"n":"Palomar","a":"Prol. López Mateos Sur 1399, La Tijera","s":"Jalisco","sid":"MX-JAL","z":"bo","f":"p","h":"Lun–sáb 10:00–19:45 · dom 11:00–18:45","x":470.5,"y":429.58,"src":"loc"},{"n":"Tijuana Centro","a":"Av. Felipe Carrillo Puerto 7981, Col. Centro, Tijuana","s":"Baja California","sid":"MX-BCN","z":"fr","f":"c","h":"Lun–dom 9:30–19:00","x":48.51,"y":13.66,"src":"loc"},{"n":"Tijuana Carrousel","a":"Blvd. Díaz Ordaz 68835, Tijuana","s":"Baja California","sid":"MX-BCN","z":"fr","f":"p","h":"Lun–dom 9:30–19:00","x":50.0,"y":14.58,"src":"loc"},{"n":"Mexicali","a":"Paseo de los Cachanilla 181, Mexicali","s":"Baja California","sid":"MX-BCN","z":"fr","f":"p","h":"Lun–dom 9:30–19:00","x":97.83,"y":9.97,"src":"loc"},{"n":"Querétaro Centro","a":"Juárez Norte 53, Col. Centro, Querétaro","s":"Querétaro","sid":"MX-QUE","z":"bo","f":"c","h":"Lun–dom 10:00–19:30","x":565.47,"y":429.25,"src":"loc"},{"n":"Arboledas","a":"Bernardo Quintana 540, Col. Arboledas, Querétaro","s":"Querétaro","sid":"MX-QUE","z":"bo","f":"p","h":"Lun–dom 10:00–19:30","x":565.99,"y":429.68,"src":"loc"},{"n":"Mérida Centro","a":"Calle 58 #488, Col. Centro, Mérida","s":"Yucatán","sid":"MX-YUC","z":"cs","f":"c","h":"Lun–dom 10:00–19:30","x":899.91,"y":416.72,"src":"loc"},{"n":"Campestre","a":"Calle 1-C 254, Campestre, Mérida","s":"Yucatán","sid":"MX-YUC","z":"cs","f":"p","h":"Lun–dom 10:00–19:30","x":900.16,"y":415.23,"src":"loc"},{"n":"Aguascalientes Centro","a":"Av. Francisco I. Madero 303, Col. Centro","s":"Aguascalientes","sid":"MX-AGU","z":"bo","f":"c","h":"Lun–dom 10:00–19:30","x":506.4,"y":386.3,"src":"loc"},{"n":"Boca del Río","a":"Blvd. Ruiz Cortines 3403, Las Américas, Boca del Río","s":"Veracruz","sid":"MX-VER","z":"cs","f":"p","h":"Lun–sáb 10:00–20:00 · dom 11:00–19:00","x":698.45,"y":476.57,"src":"loc"},{"n":"Torreón","a":"Prolongación Falcón 376, Col. Moderna, Torreón","s":"Coahuila","sid":"MX-COA","z":"nn","f":"c","h":"Lun–dom 9:30–19:00","x":471.43,"y":262.19,"src":"loc"},{"n":"Durango Centro","a":"5 de Febrero 110 Pte., Col. Centro, Durango","s":"Durango","sid":"MX-DUR","z":"nn","f":"c","h":"Lun–sáb 10:00–19:30 · dom 10:00–18:00","x":432.76,"y":314.02,"src":"loc"},{"n":"León Centro","a":"Portal Bravo 2, Zona Peatonal, León","s":"Guanajuato","sid":"MX-GUA","z":"bo","f":"c","h":"Lun–sáb 10:00–19:45 · dom 11:00–18:45","x":525.4,"y":411.66,"src":"loc"},{"n":"Puebla Centro","a":"Puebla, Pue. · domicilio no extraído del localizador","s":"Puebla","sid":"MX-PUE","z":"cs","f":"c","h":"Horario no extraído","x":633.6,"y":480.41,"src":"loc-parcial"},{"n":"Angelópolis","a":"Puebla, Pue. · domicilio no extraído del localizador","s":"Puebla","sid":"MX-PUE","z":"cs","f":"p","h":"Horario no extraído","x":632.45,"y":480.84,"src":"loc-parcial"},{"n":"Cancún","a":"Cancún, Q. Roo · página estatal del sitio oficial","s":"Quintana Roo","sid":"MX-ROO","z":"cs","f":"p","h":"Horario no extraído","x":985.99,"y":410.37,"src":"otra"},{"n":"Hermosillo","a":"Hermosillo, Son. · listado de Rappi","s":"Sonora","sid":"MX-SON","z":"nn","f":"p","h":"Horario no extraído","x":237.27,"y":138.08,"src":"otra"},{"n":"Chihuahua","a":"Chihuahua, Chih. · apertura 2025, prensa local","s":"Chihuahua","sid":"MX-CHH","z":"nn","f":"p","h":"Horario no extraído","x":388.57,"y":154.21,"src":"prensa"},{"n":"Ciudad Juárez","a":"Plaza Juárez Mall · apertura 16 abr 2026, prensa local","s":"Chihuahua","sid":"MX-CHH","z":"fr","f":"p","h":"Horario no extraído","x":378.11,"y":43.91,"src":"prensa"}],"factory":{"n":"Fábrica de Arte Manual Decorativo","a":"Av. 16 de Septiembre, Barrio Santiaguito, Tultitlán, Edo. de México","x":603.45,"y":460.57},"labels":[{"t":"Tijuana","x":48.8,"y":13.7,"a":"r"},{"t":"Mexicali","x":97.8,"y":10.0,"a":"r"},{"t":"Ciudad Juárez","x":378.0,"y":44.1,"a":"r"},{"t":"Chihuahua","x":388.5,"y":154.0,"a":"r"},{"t":"Hermosillo","x":237.3,"y":138.1,"a":"r"},{"t":"Monterrey","x":568.0,"y":257.7,"a":"r"},{"t":"Torreón","x":471.4,"y":262.2,"a":"l"},{"t":"Durango","x":432.6,"y":313.8,"a":"l"},{"t":"Guadalajara","x":472.4,"y":427.0,"a":"l"},{"t":"Aguascalientes","x":506.5,"y":386.4,"a":"l"},{"t":"León","x":525.5,"y":411.7,"a":"r"},{"t":"Querétaro","x":565.5,"y":429.3,"a":"r"},{"t":"Valle de México","x":604.0,"y":467.7,"a":"r"},{"t":"Puebla","x":633.2,"y":480.5,"a":"r"},{"t":"Boca del Río","x":698.4,"y":476.6,"a":"r"},{"t":"Mérida","x":900.0,"y":416.1,"a":"l"},{"t":"Cancún","x":986.0,"y":410.4,"a":"l"}]}</script>
 <script>
 (function(){
 "use strict";
 
 var AGENTS = [
- {k:"AG-01", anchor:true,
+ {k:"AG-01", tag:"Agente ancla",
   nm:"Contribución por referencia con arancel aplicado",
   h:"Contribución por referencia, separando las tres economías del anaquel",
   proceso:"Fijación de precio y asignación de espacio para un catálogo amplio donde conviven producto importado de origen sin tratado, producto importado con preferencia arancelaria y producto fabricado en Tultitlán.",
@@ -1490,9 +1707,9 @@ var AGENTS = [
   agente:"Cruza maestro de artículos, pedimento con fracción y origen, costeo de fábrica, precio de lista y venta por tienda. Produce contribución por referencia con el arancel aplicado y la etiqueta de su economía de origen.",
   accion:"Entrega cada semana la lista corta: referencias cuyo margen real se separó más del rango aceptable, con el origen que lo explica y el ajuste de precio o de surtido sugerido.",
   resultado:"Las decisiones de precio y de espacio dejan de tomarse sobre un costo promedio y pasan a tomarse sobre el costo de cada referencia.",
-  pre:"Fracción arancelaria capturada en el maestro de artículos y vinculable al pedimento; costeo que distinga fabricación propia de importación; venta por referencia y por tienda. Si la fracción no está en el maestro, este caso no arranca — y construirla es el primer entregable, no un obstáculo."},
+  pre:"Fracción arancelaria capturada en el maestro de artículos y vinculable al pedimento; costeo que distinga fabricación propia de importación; venta por referencia y por tienda. Es la pregunta 1 de la sección 09: si la fracción no está en el maestro, construirla es el primer entregable."},
 
- {k:"AG-02",
+ {k:"AG-02", tag:"Tienda",
   nm:"Pedido sugerido por tienda y temporada",
   h:"Pedido sugerido por tienda, formato y temporada",
   proceso:"Definir cuánto y qué mandar a cada sucursal para cada una de las más de doce temporadas que el propio catálogo declara al año.",
@@ -1502,17 +1719,47 @@ var AGENTS = [
   resultado:"El criterio de la compradora se aplica donde importa, en vez de gastarse en reconstruir la misma tabla cada temporada.",
   pre:"Dos o tres ciclos de la misma temporada con venta a nivel referencia y tienda, e inventario confiable por sucursal. Sin historia comparable por temporada, el caso se degrada a reposición simple."},
 
- {k:"AG-03",
+ {k:"AG-03", tag:"Tienda",
   nm:"Venta perdida y faltante en piso",
   h:"Venta perdida: lo que se pidió y no estaba",
-  proceso:"Detectar demanda que llegó a la tienda, al WhatsApp o al sitio y no encontró producto.",
-  friccion:"Hoy esa información se disuelve: la clienta pregunta, no hay, se va, y no queda registro. Es la métrica más valiosa del retail especializado y la más fácil de perder.",
-  agente:"Lee búsquedas sin resultado del sitio, conversaciones de WhatsApp de sucursal y quiebres de anaquel contra inventario teórico, y los agrupa por referencia, tienda y temporada.",
-  accion:"Publica un reporte semanal de demanda no atendida, ordenado por contribución potencial y no por número de menciones.",
-  resultado:"La reposición y el surtido futuro se corrigen con lo que la clienta pidió, no solo con lo que se vendió.",
-  pre:"Que las conversaciones de WhatsApp se conserven en una plataforma, no en el teléfono de la tienda. Es la bifurcación 3 de la sección 09 y define si este caso es barato o es un proyecto."},
+  proceso:"Detectar la demanda que llegó a la tienda o a la tienda en línea y no encontró producto.",
+  friccion:"Hoy esa información se disuelve: la clienta pregunta, no hay, se va, y no queda registro. En retail especializado es la métrica más valiosa y la más fácil de perder, sobre todo en el pico de una temporada.",
+  agente:"Cruza quiebres de anaquel contra inventario teórico, búsquedas sin resultado en la tienda en línea y referencias agotadas en el sistema, y los agrupa por referencia, tienda y temporada.",
+  accion:"Publica cada semana la demanda no atendida, ordenada por contribución potencial y no por número de menciones.",
+  resultado:"La reposición y el surtido de la siguiente temporada se corrigen con lo que la clienta pidió, no solo con lo que se vendió.",
+  pre:"Inventario confiable por tienda y registro de búsquedas en la tienda en línea. Es la pregunta 3 de la sección 09 y define si el caso arranca de inmediato o empieza midiendo."},
 
- {k:"AG-04",
+ {k:"AG-04", tag:"Temporada",
+  nm:"Obsolescencia y rotación por temporada",
+  h:"Lo que sobra al cerrar cada temporada",
+  proceso:"Gestionar el inventario de más de una docena de temporadas al año: qué rebajar, cuándo, en qué tienda y qué mover a otra plaza antes de que cierre la ventana.",
+  friccion:"El producto de temporada tiene fecha de caducidad comercial: la calavera que no se vendió el 2 de noviembre vale una fracción el día 3. Las rebajas se deciden tienda por tienda, tarde y sin ver la rotación del resto de la red.",
+  agente:"Sigue la rotación diaria por referencia, tienda y temporada contra la curva esperada, y detecta con semanas de anticipación qué va a sobrar y dónde.",
+  accion:"Propone transferencias entre tiendas mientras la temporada sigue viva, rebajas escalonadas antes del cierre y el volumen que no conviene repetir en la compra o en la producción del año siguiente.",
+  resultado:"Menos sobrante liquidado a pérdida y una compra de la siguiente temporada calibrada con lo que de verdad rotó.",
+  pre:"Venta diaria por referencia y tienda, inventario por tienda y la etiqueta de temporada en el maestro de artículos. Es la pregunta 5 de la sección 09."},
+
+ {k:"AG-05", tag:"Planta",
+  nm:"Plan de producción alineado a temporadas",
+  h:"Tultitlán produciendo para la temporada que viene, no para la que pasó",
+  proceso:"Definir qué fabrica la planta de Tultitlán, en qué cantidad y en qué semana, para llegar a tiempo a cada temporada.",
+  friccion:"La planta decide semanas antes y con lotes eficientes lo que la tienda solo confirma cuando la temporada arranca. Si planta y comercial no comparten pronóstico, se fabrica lo que conviene a la línea y no lo que se va a vender.",
+  agente:"Une el pronóstico de temporada por referencia —el mismo que alimenta el pedido sugerido de tiendas— con capacidad de línea, tiempos de cambio y existencias de producto terminado.",
+  accion:"Propone el plan maestro semanal de producción con fechas de corte por temporada, y marca las referencias en riesgo de llegar tarde o de producirse de más.",
+  resultado:"Producto propio en anaquel cuando la temporada empieza y menos inventario terminado esperando a la siguiente.",
+  pre:"Capacidad y tiempos por línea, inventario de producto terminado y un pronóstico de temporada por referencia. Es la pregunta 6 de la sección 09: si la planta produce por reposición, el primer entregable es ese pronóstico común."},
+
+ {k:"AG-06", tag:"Planta",
+  nm:"Fabricar o importar: costo comparado por referencia",
+  h:"Qué conviene fabricar en Tultitlán ahora que importar cuesta más",
+  proceso:"Decidir, referencia por referencia, si un artículo se fabrica en Tultitlán, se importa o se compra a un proveedor nacional.",
+  friccion:"Desde enero de 2026 el costo de importar se movió por fracción arancelaria; el de fabricar, no. Referencias que antes convenía importar hoy pueden convenir hacerse en casa, y la decisión se sigue tomando con costos de un año que ya no existe.",
+  agente:"Compara para cada referencia el costo estándar de fabricación con el costo de aterrizaje importado con el arancel vigente, considerando capacidad libre de la planta y lote mínimo.",
+  accion:"Entrega una lista priorizada de candidatos a sustituir importación por producción propia —y, al revés, de lo que ya no conviene fabricar— con el margen que movería cada cambio.",
+  resultado:"La fábrica crece en lo que más margen gana al dejar de importarse, con una decisión documentada y no por intuición.",
+  pre:"Costo estándar por referencia en Tultitlán y costo de aterrizaje con fracción aplicada. Depende de las preguntas 1 y 4 de la sección 09, y del agente ancla."},
+
+ {k:"AG-07", tag:"Tienda",
   nm:"Cobertura de piso contra el calendario de jornada",
   h:"Cobertura de piso proyectada a 46, 44, 42 y 40 horas",
   proceso:"Armar el rol de cada tienda para cubrir cerca de 66 horas de apertura semanales con personal cuya jornada legal baja por calendario hasta 2030.",
@@ -1522,42 +1769,32 @@ var AGENTS = [
   resultado:"El ajuste se planea con doce meses de anticipación en vez de improvisarse en la última quincena del año.",
   pre:"Roles actuales por tienda, horas de apertura por sucursal y un mecanismo de registro de jornada. El registro electrónico es obligatorio desde el 1 de enero de 2027, así que el dato va a existir de todos modos."},
 
- {k:"AG-05",
-  nm:"WhatsApp de sucursal como demanda estructurada",
-  h:"De conversación de sucursal a demanda estructurada",
-  proceso:"Atender las consultas que llegan a las líneas de WhatsApp que cada tienda publica en el localizador.",
-  friccion:"Se está vendiendo y asesorando bien por ese canal, y no se está midiendo casi nada. Cada conversación contiene un dato de demanda, de faltante o de intención de compra que se pierde al cerrar el chat.",
-  agente:"Clasifica cada conversación en consulta de disponibilidad, pedido, cotización de proyecto o reclamo; extrae las referencias mencionadas; y propone la respuesta con inventario real de esa tienda para que la persona la envíe.",
-  accion:"Deja a la vendedora respondiendo con el dato correcto y, en paralelo, alimenta el reporte de demanda del agente 03.",
-  resultado:"El canal que ya funciona empieza además a generar información, sin cambiar quién atiende ni cómo se atiende.",
-  pre:"Las líneas de sucursal migradas a una plataforma con historial y etiquetas, e inventario consultable por tienda. No se propone sustituir a la vendedora: se propone darle el inventario a la mano."},
-
- {k:"AG-06",
+ {k:"AG-08", tag:"Comercial",
   nm:"Identificación del cliente profesional",
   h:"La clienta que compra para revender",
   proceso:"Distinguir a la compradora que hace una manualidad para su casa de la que compra insumos para un negocio de eventos, mesas de dulces, decoración o bisutería.",
   friccion:"Las dos entran por la misma puerta y pagan en la misma caja. Un ticket promedio de $600 sobre 4 millones de visitantes esconde una dispersión que hoy no se segmenta, y la segunda clienta compra más seguido, más volumen y con más previsibilidad.",
-  agente:"Detecta patrones de recurrencia, volumen por línea y combinaciones de producto propias de un proyecto comercial; cruza tienda, facturación y conversación de WhatsApp cuando hay identificador común.",
-  accion:"Propone lista de reposición anticipada por proyecto y temporada para ese segmento, y la pone en manos de la tienda que ya la atiende.",
+  agente:"Detecta patrones de recurrencia, volumen por línea y combinaciones de producto propias de un proyecto comercial; cruza ticket, facturación y compras en línea cuando hay un identificador común.",
+  accion:"Propone una lista de reposición anticipada por proyecto y temporada para ese segmento, y la pone en manos de la tienda que ya la atiende.",
   resultado:"Se atiende como cliente recurrente a quien ya se comporta como cliente recurrente, sin crear un canal nuevo.",
-  pre:"Un identificador común entre tienda, WhatsApp y comercio electrónico. Es la bifurcación 2 de la sección 09 y es la condición más exigente de los seis casos."}
+  pre:"Un identificador común entre tienda y tienda en línea; la factura suele ser el primero disponible. Es la condición más exigente de los ocho casos."}
 ];
 
 var SEC = [
  {id:"tesis",      n:"01", t:"La tesis",                     d:"Core Business Hypothesis y migración de la restricción"},
- {id:"resuelto",   n:"02", t:"Lo que ya está resuelto",      d:"Inventario de seis capacidades instaladas"},
+ {id:"resuelto",   n:"02", t:"Lo que ya está resuelto",      d:"Seis capacidades instaladas y la ficha de la fábrica"},
  {id:"terreno",    n:"03", t:"El terreno cambió",            d:"Tres decretos con fecha cierta y su calendario"},
- {id:"compania",   n:"04", t:"La compañía cambió",           d:"2023–2026 y el conteo de tiendas que no cuadra"},
- {id:"geo",        n:"05", t:"Portafolio y geografía",       d:"Dos formatos, dos zonas salariales, la aritmética de cobertura"},
- {id:"bench",      n:"06", t:"Benchmark competitivo",        d:"Seis variables, una ficha y dos cohortes declaradas"},
+ {id:"compania",   n:"04", t:"La compañía cambió",           d:"2023–2026, el conteo de tiendas y la lógica de la frontera"},
+ {id:"geo",        n:"05", t:"Portafolio y geografía",       d:"Mapa interactivo de la red y la aritmética de cobertura"},
+ {id:"bench",      n:"06", t:"Benchmark competitivo",        d:"Seis variables: la fábrica como diferencia"},
  {id:"impl",       n:"07", t:"Implicaciones de ejecución",   d:"Seis consecuencias y dónde entra London"},
- {id:"ia",         n:"08", t:"IA y agentes",                 d:"Consola de seis agentes propuestos", live:true},
- {id:"datos",      n:"09", t:"Datos y ecosistema digital",   d:"Tres bifurcaciones y qué cambia cada respuesta"},
+ {id:"ia",         n:"08", t:"IA y agentes",                 d:"Consola de ocho agentes, dos para la planta", live:true},
+ {id:"datos",      n:"09", t:"Datos y ecosistema digital",   d:"Seis preguntas técnicas y qué cambia cada respuesta"},
  {id:"outlook",    n:"10", t:"Outlook 2026–2029",            d:"Base, aceleración y presión"},
- {id:"hip",        n:"11", t:"Hipótesis",                    d:"Seis hipótesis refutables para el prediagnóstico"},
+ {id:"hip",        n:"11", t:"Hipótesis",                    d:"Seis hipótesis para dimensionar en el prediagnóstico"},
  {id:"pre",        n:"12", t:"Prediagnóstico",               d:"Estudio de Factibilidad: siete inputs y un entregable"},
  {id:"casos",      n:"13", t:"Casos de éxito",               d:"Tres casos con ROI publicado y documentos abiertos"},
- {id:"metodo",     n:"14", t:"Método, fuentes y limitaciones", d:"Clasificación, límites declarados y 17 fuentes"},
+ {id:"metodo",     n:"14", t:"Método, fuentes y limitaciones", d:"Clasificación, límites declarados y 22 fuentes"},
  {id:"cta",        n:"→",  t:"Conversación de 45 minutos",   d:"Contrastar las hipótesis, los casos y la capa de agentes", cta:true}
 ];
 
@@ -1588,7 +1825,7 @@ function buildConsole(){
     b.className='ag'; b.type='button'; b.setAttribute('role','tab');
     b.setAttribute('aria-selected', i===0?'true':'false');
     b.innerHTML='<div class="k">'+a.k+'</div><div class="nm">'+a.nm+'</div>'+
-      (a.anchor?'<span class="anchor">Agente ancla</span>':'');
+      '<span class="anchor'+(a.tag==='Agente ancla'?'':' t2')+(a.tag==='Planta'?' pl':'')+'">'+a.tag+'</span>';
     b.addEventListener('click',function(){
       Array.prototype.forEach.call(list.children,function(c){c.setAttribute('aria-selected','false');});
       b.setAttribute('aria-selected','true'); render(a);
@@ -1605,6 +1842,142 @@ function buildConsole(){
       '</div><div class="precond"><div class="lb">Condición previa de datos</div><p>'+a.pre+'</p></div>';
   }
   render(AGENTS[0]);
+}
+
+
+/* --------- mapa de la red --------- */
+var MAPD=null;
+var ZONES=[['all','Todas las zonas'],['vm','Valle de México'],['bo','Bajío y Occidente'],['nn','Norte y Noreste'],['fr','Frontera norte'],['cs','Centro, Golfo y Sureste']];
+var ZNAME={vm:'Valle de México',bo:'Bajío y Occidente',nn:'Norte y Noreste',fr:'Frontera norte · Zona Libre',cs:'Centro, Golfo y Sureste'};
+var SRC={'loc':'Localizador oficial, consultado el 22 oct 2026','loc-parcial':'Localizador oficial; domicilio no extraíble','otra':'Página estatal del sitio y listado de Rappi','prensa':'Notas de apertura en prensa local'};
+var RM=window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+function esc(t){return String(t).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+function buildMap(){
+  var svg=document.getElementById('fmMap'); if(!svg) return;
+  if(!MAPD) MAPD=JSON.parse(document.getElementById('MAPDATA').textContent);
+  var NS='http://www.w3.org/2000/svg', W=MAPD.W, H=MAPD.H;
+  var HW=W*1.06, HOME={x:-W*0.03,y:-H*0.035,w:HW,h:HW*H/W};
+  var vb={x:HOME.x,y:HOME.y,w:HOME.w,h:HOME.h}, zone='all', sel=null;
+  var tip=document.getElementById('mapTip'), wrap=document.getElementById('mapWrap');
+  var has={}; MAPD.stores.forEach(function(s){has[s.sid]=1;});
+  function el(n,a){var e=document.createElementNS(NS,n);for(var k in a)e.setAttribute(k,a[k]);return e;}
+  svg.innerHTML='';
+  var gS=el('g',{'class':'m-states'});
+  MAPD.states.forEach(function(s){gS.appendChild(el('path',{d:s.d,'class':'m-st'+(has[s.id]?' on':''),'vector-effect':'non-scaling-stroke'}));});
+  svg.appendChild(gS);
+  var gL=el('g',{'class':'m-labels'}); svg.appendChild(gL);
+  MAPD.labels.forEach(function(l){var t=el('text',{x:l.x,y:l.y,'class':'m-lb','data-a':l.a});t.textContent=l.t;gL.appendChild(t);});
+  var gN=el('g',{'class':'m-names'}); svg.appendChild(gN);
+  var gD=el('g',{'class':'m-dots'}); svg.appendChild(gD);
+  var f=MAPD.factory;
+  var fac=el('rect',{'class':'m-fac',tabindex:'0',role:'button','aria-label':f.n});
+  gD.appendChild(fac);
+  var facT=el('text',{'class':'m-lb m-facl'}); facT.textContent='Fábrica · Tultitlán'; gL.appendChild(facT);
+  var dots=MAPD.stores.map(function(s,i){
+    var c=el('circle',{cx:s.x,cy:s.y,'class':'m-dot '+(s.z==='fr'?'fr':s.f),tabindex:'0',role:'button','aria-label':s.n+', '+s.s});
+    c.addEventListener('mouseenter',function(){showTip(s);});
+    c.addEventListener('mouseleave',hideTip);
+    c.addEventListener('click',function(){select(i);});
+    c.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();select(i);}});
+    gD.appendChild(c);
+    var t=el('text',{x:s.x,y:s.y,'class':'m-nm'}); t.textContent=s.n; gN.appendChild(t);
+    return {c:c,t:t,s:s};
+  });
+  gD.appendChild(fac);
+  fac.addEventListener('click',selectFactory);
+  fac.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();selectFactory();}});
+  fac.addEventListener('mouseenter',function(){showTip({n:f.n,s:'Tultitlán, Estado de México'});});
+  fac.addEventListener('mouseleave',hideTip);
+
+  function apply(){
+    svg.setAttribute('viewBox',vb.x+' '+vb.y+' '+vb.w+' '+vb.h);
+    var k=vb.w/W, r=Math.max(6.2*k,0.18);
+    dots.forEach(function(d){d.c.setAttribute('r',d.c.classList.contains('sel')?r*1.7:r);
+      d.t.setAttribute('x',d.s.x+r*1.9);d.t.setAttribute('y',d.s.y+r*0.6);d.t.style.fontSize=(13*k)+'px';d.t.style.strokeWidth=(3*k)+'px';});
+    var fs=r*2.1; fac.setAttribute('x',f.x-fs/2);fac.setAttribute('y',f.y-fs/2);fac.setAttribute('width',fs);fac.setAttribute('height',fs);fac.setAttribute('rx',fs*0.22);
+    facT.setAttribute('x',f.x+fs*0.9);facT.setAttribute('y',f.y-fs*0.7);
+    var near=k<0.28;
+    gN.style.display=near?'':'none';
+    [].forEach.call(gL.querySelectorAll('.m-lb'),function(t){
+      t.style.strokeWidth=(3.5*k)+'px';
+      if(t===facT){t.style.fontSize=(13*k)+'px';t.style.display=(k<0.5)?'':'none';return;}
+      t.style.fontSize=(15*k)+'px'; t.style.display=near?'none':'';
+      var a=t.getAttribute('data-a'), dx=(a==='l'?-9:9)*k;
+      t.setAttribute('text-anchor',a==='l'?'end':'start');
+      t.setAttribute('dx',dx); t.setAttribute('dy',4*k);
+    });
+  }
+  function animateTo(t){
+    if(RM){vb=t;apply();return;}
+    var s={x:vb.x,y:vb.y,w:vb.w,h:vb.h},t0=performance.now(),D=420;
+    function step(n){var p=Math.min(1,(n-t0)/D),e=1-Math.pow(1-p,3);
+      vb={x:s.x+(t.x-s.x)*e,y:s.y+(t.y-s.y)*e,w:s.w+(t.w-s.w)*e,h:s.h+(t.h-s.h)*e};apply();
+      if(p<1)requestAnimationFrame(step);}
+    requestAnimationFrame(step);
+  }
+  function clampW(w){return Math.max(W/32,Math.min(HW,w));}
+  function zoomBy(fct){var w=clampW(vb.w/fct),h=w*H/W,cx=vb.x+vb.w/2,cy=vb.y+vb.h/2;animateTo({x:cx-w/2,y:cy-h/2,w:w,h:h});}
+  function fit(list){
+    if(!list.length||zone==='all'){animateTo(HOME);return;}
+    var x0=1e9,y0=1e9,x1=-1e9,y1=-1e9;
+    list.forEach(function(s){x0=Math.min(x0,s.x);y0=Math.min(y0,s.y);x1=Math.max(x1,s.x);y1=Math.max(y1,s.y);});
+    if(zone==='vm'){x0=Math.min(x0,f.x);y0=Math.min(y0,f.y);x1=Math.max(x1,f.x);y1=Math.max(y1,f.y);}
+    var pad=Math.max(x1-x0,(y1-y0)*W/H)*0.2+4;
+    var w=clampW(Math.max(x1-x0,(y1-y0)*W/H)+pad*2),h=w*H/W;
+    var cy=(y0+y1)/2+(zone==='fr'?h*0.3:0);
+    animateTo({x:(x0+x1)/2-w/2,y:cy-h/2,w:w,h:h});
+  }
+  function showTip(s){tip.hidden=false;tip.innerHTML='<b>'+esc(s.n)+'</b><span>'+esc(s.s)+'</span>';}
+  function hideTip(){tip.hidden=true;}
+  function stats(list){
+    document.getElementById('stAll').textContent=list.length;
+    document.getElementById('stC').textContent=list.filter(function(s){return s.f==='c';}).length;
+    document.getElementById('stF').textContent=list.filter(function(s){return s.z==='fr';}).length;
+  }
+  var det=document.getElementById('mapDetail');
+  function select(i){
+    sel=i; dots.forEach(function(d,j){d.c.classList.toggle('sel',j===i);}); apply();
+    var s=dots[i].s;
+    det.innerHTML='<div class="md-h"><div><div class="md-n">'+esc(s.n)+'</div><div class="md-z">'+esc(s.s)+' · '+esc(ZNAME[s.z])+'</div></div>'+
+      '<span class="md-tag '+(s.z==='fr'?'fr':s.f)+'">'+(s.z==='fr'?'Zona Libre':(s.f==='c'?'Centro':'Plaza'))+'</span></div>'+
+      '<div class="md-row"><span>Domicilio</span>'+esc(s.a)+'</div>'+
+      '<div class="md-row"><span>Horario publicado</span>'+esc(s.h)+'</div>'+
+      (s.z==='fr'?'<div class="md-row"><span>Piso salarial 2026</span>$440.87 diarios, 40 % sobre la zona general · IVA fronterizo al 8 %</div>':'')+
+      '<div class="md-src">Fuente: '+esc(SRC[s.src])+'</div>';
+  }
+  function selectFactory(){
+    sel=null; dots.forEach(function(d){d.c.classList.remove('sel');}); apply();
+    det.innerHTML='<div class="md-h"><div><div class="md-n">'+esc(f.n)+'</div><div class="md-z">Arte Manual Decorativo, S.A. de C.V.</div></div><span class="md-tag fac">Fábrica</span></div>'+
+      '<div class="md-row"><span>Ubicación</span>'+esc(f.a)+'</div>'+
+      '<div class="md-row"><span>Produce</span>Diamantina, pegamento, pintura, lentejuela, velas, entorchado y diseños de PVC, unicel y madera</div>'+
+      '<div class="md-row"><span>Exporta a</span>Estados Unidos, Italia, Indonesia y Taiwán</div>'+
+      '<div class="md-src">Fuente: fantasiasmiguel.com/pages/unete y LinkedIn de la razón social</div>';
+  }
+  var fb=document.getElementById('mapFilters'); fb.innerHTML='';
+  ZONES.forEach(function(z){
+    var b=document.createElement('button'); b.type='button'; b.className='mf'+(z[0]==='all'?' on':''); b.textContent=z[1];
+    b.setAttribute('aria-pressed',z[0]==='all'?'true':'false');
+    b.addEventListener('click',function(){
+      zone=z[0]; [].forEach.call(fb.children,function(c){c.classList.remove('on');c.setAttribute('aria-pressed','false');});
+      b.classList.add('on'); b.setAttribute('aria-pressed','true');
+      var list=[]; dots.forEach(function(d){var on=zone==='all'||d.s.z===zone; d.c.classList.toggle('dim',!on); d.t.classList.toggle('dim',!on); if(on)list.push(d.s);});
+      stats(list); fit(list);
+    });
+    fb.appendChild(b);
+  });
+  document.getElementById('zIn').onclick=function(){zoomBy(1.7);};
+  document.getElementById('zOut').onclick=function(){zoomBy(1/1.7);};
+  document.getElementById('zReset').onclick=function(){animateTo(HOME);};
+  var drag=null;
+  svg.addEventListener('pointerdown',function(e){if(e.target.closest&&e.target.closest('.m-dot,.m-fac'))return;drag={x:e.clientX,y:e.clientY,vx:vb.x,vy:vb.y};svg.setPointerCapture(e.pointerId);svg.classList.add('grab');});
+  svg.addEventListener('pointermove',function(e){
+    var r=wrap.getBoundingClientRect(); tip.style.left=(e.clientX-r.left+14)+'px'; tip.style.top=(e.clientY-r.top+14)+'px';
+    if(!drag)return; var R=svg.getBoundingClientRect(), sc=Math.max(vb.w/R.width,vb.h/R.height);
+    vb.x=drag.vx-(e.clientX-drag.x)*sc; vb.y=drag.vy-(e.clientY-drag.y)*sc; apply();});
+  function end(){drag=null;svg.classList.remove('grab');}
+  svg.addEventListener('pointerup',end); svg.addEventListener('pointercancel',end);
+  svg.addEventListener('dblclick',function(){zoomBy(1.7);});
+  stats(MAPD.stores); apply();
 }
 
 /* --------- ruteo --------- */
@@ -1626,6 +1999,7 @@ function go(id,push){
   if(push!==false && location.hash.slice(1)!==id) history.pushState({v:id},'','#'+id);
   document.title=s.t+' · Fantasías Miguel · London Consulting Group';
   if(id==='ia') buildConsole();
+  if(id==='geo') buildMap();
   var h=stage.querySelector('h2.sect')||stage.querySelector('h2');
   if(h){h.setAttribute('tabindex','-1');h.focus({preventScroll:true});}
   window.scrollTo(0,0);
